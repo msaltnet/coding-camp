@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-07-29T15:25:36+09:00",
+  "id": "code-lab-sample-id",
+  "duration": 5,
+  "title": "코드랩 샘플",
+  "summary": "코드랩 샘플 요약 문장",
+  "source": ".\\code-lab-sample.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "sample"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "code-lab-sample-id"
+}
