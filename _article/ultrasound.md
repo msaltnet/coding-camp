@@ -83,6 +83,13 @@ Duration: 0:03:00
 
 계산을 할 때는 시간과 거리의 단위를 정확하게 변환해서 계산해야 합니다.
 
+<aside class="positive">
+도전!<br>
+천둥과 번개는 같은 곳에서 발생하는데, 각각 음속과 광속으로 우리가 있는 곳에 도착합니다.<br>
+음속은 340m/s이고, 광속은 299,792,458m/s입니다.<br>
+그렇다면 번개가 발생한 곳까지의 거리는 어떻게 계산할 수 있을까요?<br>
+</aside>
+
 ## 초음파 센서부터 장애물까지 거리 측정 해보기
 Duration: 0:05:00
 
@@ -101,33 +108,35 @@ Duration: 0:05:00
 아두이노 IDE를 실행해서 아래 코드를 입력해 주세요. 코드의 설명은 주석으로 달아놨으니 나중에 천천히 이해해 보세요.
 
 ```c
-#define TRIG 9 //TRIG 핀 설정 (초음파 보내는 핀)
-#define ECHO 8 //ECHO 핀 설정 (초음파 받는 핀)
+#define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
+#define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 
 void setup() {
-  Serial.begin(9600); //PC와 
+  Serial.begin(9600); //PC와 시리얼 통신을 설정
 
-  pinMode(TRIG, OUTPUT);
-  pinMode(ECHO, INPUT);
+  pinMode(TRIG_PIN_NUM, OUTPUT); //TRIG 핀과 연결된 아두이노 핀을 출력으로 설정
+  pinMode(ECHO_PIN_NUM, INPUT); //ECHO 핀과 연결된 아두이노 핀을 입력으로 설정
 }
 
 void loop()
 {
   long duration, distance;
 
-  digitalWrite(TRIG, LOW);
-  delayMicroseconds(2); // 0.000002초 대기, 센서의 동작을 기다림
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
+  delayMicroseconds(2); // 2마이크로세컨드(0.000002초) 대기, 센서의 동작을 기다림
 
-  digitalWrite(TRIG, HIGH);
-  delayMicroseconds(10);  // 0.00001초 대기, 센서의 동작을 기다림
+  digitalWrite(TRIG_PIN_NUM, HIGH); //TRIG 핀의 신호를 HIGH로 설정
+  delayMicroseconds(10);  // 10마이크로세컨드(0.00001초) 대기, 센서의 동작을 기다림
 
-  digitalWrite(TRIG, LOW);
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
 
-  duration = pulseIn(ECHO, HIGH); //물체에 반사되어돌아온 초음파의 시간을 변수에 저장합니다.
-  // Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
-  // 34000 * 초음파가 물체로 부터 반사되어 돌아오는시간 / 1000000 / 2(왕복값이아니라 편도값이기때문에 나누기2를 해줍니다.)
-  // 초음파센서의 거리값이 위 계산값과 동일하게 Cm로 환산되는 계산공식 입니다. 수식이 간단해지도록 적용했습니다.
+  duration = pulseIn(ECHO_PIN_NUM, HIGH); //물체에 반사되어돌아온 초음파의 시간을 변수에 저장합니다.
+  // "pulseIn" Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
 
+  // 거리를 구하는 공식의 단위를 맞춰서 계산해야 합니다.
+  // 34000 * 초음파가 물체로 부터 반사되어 돌아오는시간 / 1000000 / 2 (왕복거리이므로 나누기 2를 해줍니다.)
+  // 각각 m(미터) -> cm(센티미터), s(초) -> micro sec(마이크로 초)
+  // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
   // PC모니터로 초음파 거리값을 확인 하는 코드 입니다.
@@ -136,7 +145,7 @@ void loop()
   Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여줍니다.
   Serial.println(" cm");
 
-  delay(1000); // 1초 마다 측정값을 보여줍니다.
+  delay(1000); // 1초 대기하고 다시 측정해서 값을 보여줍니다.
 }
 ```
 
@@ -161,34 +170,85 @@ LED는 7번 핀으로 연결해서 컨트롤해보겠습니다.
 
 // 회로도
 
+아래 코드를 IDE에 복사해 넣고 업로드를 합니다. 아래 코드가 어떤 내용인지는 코드에 달려있는 설명을 읽어보며 혼자 차근차근 이해해보세요~😉
+
 ```c
-#define TRIG 9 //TRIG 핀 설정 (초음파 보내는 핀)
-#define ECHO 8 //ECHO 핀 설정 (초음파 받는 핀)
+#define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
+#define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
+#define LED_PIN_NUM 7
 
 void setup() {
-  Serial.begin(9600); //PC와 
+  Serial.begin(9600); //PC와 시리얼 통신을 설정
 
-  pinMode(TRIG, OUTPUT);
-  pinMode(ECHO, INPUT);
+  pinMode(TRIG_PIN_NUM, OUTPUT); //TRIG 핀과 연결된 아두이노 핀을 출력으로 설정
+  pinMode(ECHO_PIN_NUM, INPUT); //ECHO 핀과 연결된 아두이노 핀을 입력으로 설정
 }
 
 void loop()
 {
+  int blink_interval = 0;
+  long distance = check_distance(); // 거리를 측정해서 distance에 저장합니다.
+  int total_duration = 0;
+
+  // 거리에 따라서 깜빡이는 속도를 다르게 설정합니다.
+  if (distance > 40) {
+    // 40cm보다 멀리 있을 때 설정
+    blink_interval = 1000;
+  } else if (distance > 30) {
+    // 30cm보다 멀리 있을 때 설정
+    blink_interval = 700;
+  } else if (distance > 20) {
+    // 20cm보다 멀리 있을 때 설정
+    blink_interval = 500;
+  } else if (distance > 10) {
+    // 10cm보다 멀리 있을 때 설정
+    blink_interval = 200;
+  } else {
+    // 10cm보다 가까이 있을 때 설정
+    blink_interval = 100;
+  }
+
+  while (true) { // 계속 반복되는 블럭
+    blink_led(blink_interval) // blink_interval 동안 led를 깜빡임
+    total_duration = total_duration + blink_interval; // 깜빡인 시간을 더함
+
+    if (total_duration >= 2000){
+      // 깜빡인 시간을 모두 더한 값이 2초 이상이면 반복을 중단함
+      break;
+    }
+  }
+}
+
+// 주어진 시간 동안 led를 깜빡이는 함수입니다.
+void blink_led(int duration)
+{
+  int half = duration / 2;
+  digitalWrite(LED_PIN_NUM, HIGH);
+  delay(half);
+  digitalWrite(LED_PIN_NUM, LOW);
+  delay(half);
+}
+
+// 거리를 측정해서 반환하는 함수입니다.
+long check_distance()
+{
   long duration, distance;
 
-  digitalWrite(TRIG, LOW);
-  delayMicroseconds(2); // 0.000002초 대기, 센서의 동작을 기다림
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
+  delayMicroseconds(2); // 2마이크로세컨드(0.000002초) 대기, 센서의 동작을 기다림
 
-  digitalWrite(TRIG, HIGH);
-  delayMicroseconds(10);  // 0.00001초 대기, 센서의 동작을 기다림
+  digitalWrite(TRIG_PIN_NUM, HIGH); //TRIG 핀의 신호를 HIGH로 설정
+  delayMicroseconds(10);  // 10마이크로세컨드(0.00001초) 대기, 센서의 동작을 기다림
 
-  digitalWrite(TRIG, LOW);
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
 
-  duration = pulseIn(ECHO, HIGH); //물체에 반사되어돌아온 초음파의 시간을 변수에 저장합니다.
-  // Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
-  // 34000 * 초음파가 물체로 부터 반사되어 돌아오는시간 / 1000000 / 2(왕복값이아니라 편도값이기때문에 나누기2를 해줍니다.)
-  // 초음파센서의 거리값이 위 계산값과 동일하게 Cm로 환산되는 계산공식 입니다. 수식이 간단해지도록 적용했습니다.
+  duration = pulseIn(ECHO_PIN_NUM, HIGH); //물체에 반사되어돌아온 초음파의 시간을 변수에 저장합니다.
+  // "pulseIn" Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
 
+  // 거리를 구하는 공식의 단위를 맞춰서 계산해야 합니다.
+  // 34000 * 초음파가 물체로 부터 반사되어 돌아오는시간 / 1000000 / 2 (왕복거리이므로 나누기 2를 해줍니다.)
+  // 각각 m(미터) -> cm(센티미터), s(초) -> micro sec(마이크로 초)
+  // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
   // PC모니터로 초음파 거리값을 확인 하는 코드 입니다.
@@ -197,10 +257,35 @@ void loop()
   Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여줍니다.
   Serial.println(" cm");
 
-  delay(1000); // 1초 마다 측정값을 보여줍니다.
+  delay(1000); // 1초 대기하고 다시 측정해서 값을 보여줍니다.
+
+  return distance
 }
 ```
 
+초음파 센서와 손의 거리를 변경하면 LED가 깜빡이는 속도가 변경되는 것을 확인 할 수 있습니다.
+
+//사진
+
+<aside class="positive">
+도전!<br>
+프로그램을 이해하고 다양한 방식으로 프로그래밍해보아요<br>
+1. LED가 깜빡이는 시간을 변경해보기<br>
+2. 측정된 거리를 변경해보기<br>
+3. 멀리 있을때는 깜빡이지 않게 해보기<br>
+</aside>
+
 ## 정리
+Duration: 0:01:00
 
+초음파에 대해서 알아보고 초음파 센서를 이용해서 물체와의 거리를 측정하는 방법에 대해서 알아보았습니다.
 
+아두이노와 브레드보드, LED, 저항 그리고 초음파센서를 이용해서 조금 더 복잡한 프로그래밍을 해보았습니다.
+
+조금 어려울 수도 있지만, 천천히 과학시간에 배운 것을 활용해서 실생활에 사용할 수 있을 만한 프로그램을 만들어 보세요!
+
+1. 초음파는 사람이 들을 수 없는 높은 대역의 음파다.
+1. 초음파가 물체에 반사되어 돌아오는 시간을 통해 거리를 측정할 수 있다.
+1. 초음파의 거리에 따라 LED를 다르게 깜빡거리게 할 수 있다.
+
+// 돌고래 이미지
