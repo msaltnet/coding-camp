@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 초음파 센서로 LED 점등 시켜보기
+summary: 초음파 센서로 거리 측정해서 LED 깜빡여보기
 id: ultrasound-quiz
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# 초음파 센서로 LED 점등 시켜보기
+# 초음파 센서로 거리 측정해서 LED 깜빡여보기
 
 ## Overview
 Duration: 0:01:00

@@ -1,5 +1,5 @@
 author: Jeong Seongmoon
-summary: 전기와 반도체, 프로그래밍 및 사용된 부품 소개
+summary: 전기와 반도체 그리고 프로그래밍
 id: semiconductor
 categories: codelab
 environments: Web

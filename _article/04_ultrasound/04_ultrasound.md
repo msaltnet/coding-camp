@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 초음파 센서로 거리 측정해보기
+summary: 초음파 센서로 장애물까지 거리측정 하기
 id: ultrasound
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# 초음파 센서로 거리 측정해보기
+# 초음파 센서로 장애물까지 거리측정 하기
 
 ## Overview
 Duration: 0:01:00

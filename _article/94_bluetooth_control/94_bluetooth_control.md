@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 자동차 블루투스로 조종하기
+summary: 블루투스로 자동차 조종하기
 id: car-bt
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# 자동차 블루투스로 조종하기
+# 블루투스로 자동차 조종하기
 
 ## 전기와 전하, 전류 그리고 전기 에너지
 Duration: 0:03:00

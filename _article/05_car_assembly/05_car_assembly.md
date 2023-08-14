@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 자동차 조립하기
+summary: 자동차 본체 조립
 id: car-assembly
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# 자동차 조립하기
+# 자동차 본체 조립
 
 ## 전기와 전하, 전류 그리고 전기 에너지
 Duration: 0:03:00

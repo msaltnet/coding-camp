@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 자동차 프로그래밍하기
+summary: 장애물 피해 주행하는 자동차 프로그래밍
 id: car-programming
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# 자동차 프로그래밍하기
+# 장애물 피해 주행하는 자동차 프로그래밍
 
 ## 전기와 전하, 전류 그리고 전기 에너지
 Duration: 0:03:00

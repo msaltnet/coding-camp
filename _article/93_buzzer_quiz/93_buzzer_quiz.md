@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: 멜로디를 재생하기
+summary: Buzzer로 엘리제를 위하여 노래 재생해보기
 id: buzzer-quiz
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# Buzzer로 멜로디를 재생하기
+# Buzzer로 엘리제를 위하여 노래 재생해보기
 
 ## Overview
 Duration: 0:01:00
