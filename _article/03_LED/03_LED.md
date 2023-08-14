@@ -95,11 +95,11 @@ Duration: 0:06:00
 ```c
 #define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 
-void setup() {
+void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
     pinMode(LED_PIN_NUM, OUTPUT); // LED의 긴다리 핀을 출력으로 설정
 }
 
-void loop() {
+void loop() { //loop는 계속 반복 실행되는 함수 입니다.
     digitalWrite(LED_PIN_NUM, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
     delay(1000); // 1초(1000밀리초) 동안 대기
     digitalWrite(LED_PIN_NUM, LOW); // LED와 연결된 핀에 전압을 0V로 설정
@@ -128,8 +128,8 @@ Duration: 0:01:00
 
 처음 배운것이 많아서 복잡해 보이지만 사실 매우 간단합니다.
 
-1. LED는 전기가 흐르면 빛이 나도록 만든 반도체 소자다.
-1. 반도체를 통해서 신호를 마음대로 프로그래밍 할 수 있는 전자제품을 만들 수 있다.
-1. 그리고 그것들을 이용해서 LED를 깜빡거리게 할 수 있다.
+- LED는 전기가 흐르면 빛이 나도록 만든 반도체 소자다.
+- 반도체를 통해서 신호를 마음대로 프로그래밍 할 수 있는 전자제품을 만들 수 있다.
+- 그리고 그것들을 이용해서 LED를 깜빡거리게 할 수 있다.
 
 ![semiconductor](./img/samsung-semi.png)
