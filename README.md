@@ -25,9 +25,8 @@
 ## 도전과제
 - [LED 2개를 교차로 깜빡여보기](./led-quiz)
 - [초음파 센서로 거리 측정해서 LED 깜빡여보기](./ultrasound-quiz)
-- [엘리제를 위하여 노래 재생해보기](./melody)
+- [엘리제를 위하여 노래 재생해보기](./buzzer-quiz)
 - [스마트폰으로 RC카 조작하기](./car-bt)
-- [미로를 빠져나오는 RC카 만들어보기](./smart-car)
 
 ## 사용된 부품 및 가격
 - [RC카 기본 세트 - 47,850](https://www.devicemart.co.kr/goods/view?no=1385495)

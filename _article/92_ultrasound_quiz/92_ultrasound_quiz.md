@@ -1,6 +1,6 @@
 author: Jeong Seongmoon
 summary: 초음파 센서로 LED 점등 시켜보기
-id: ultrasound
+id: ultrasound-quiz
 categories: codelab
 environments: Web
 status: Published
