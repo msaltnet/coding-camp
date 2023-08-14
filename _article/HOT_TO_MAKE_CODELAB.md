@@ -7,3 +7,5 @@
 3. `claat-windows-amd64.exe serve` 실행해서 로컬에서 확인
 4. static 파일 폴더를 `root` 폴더에 복사
 5. 커밋 생성하여 푸쉬
+
+회로도는 https://www.tinkercad.com/dashboard
