@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-14T21:51:44+09:00",
+  "id": "led",
+  "duration": 15,
+  "title": "LED 깜빡이기",
+  "summary": "LED 깜빡이기",
+  "source": ".\\_article\\03_LED\\03_LED.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "led"
+}

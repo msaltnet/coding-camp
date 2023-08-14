@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-15T00:54:39+09:00",
+  "id": "car-bt",
+  "duration": 9,
+  "title": "자동차 블루투스로 조종하기",
+  "summary": "자동차 블루투스로 조종하기",
+  "source": ".\\_article\\94_bluetooth_control\\94_bluetooth_control.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "car-bt"
+}

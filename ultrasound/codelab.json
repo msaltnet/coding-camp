@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-14T22:21:53+09:00",
+  "id": "ultrasound",
+  "duration": 15,
+  "title": "초음파 센서로 거리 측정해보기",
+  "summary": "초음파 센서로 거리 측정해보기",
+  "source": ".\\_article\\04_ultrasound\\04_ultrasound.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "ultrasound"
+}

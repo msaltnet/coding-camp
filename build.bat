@@ -9,4 +9,3 @@
 .\claat-windows-amd64.exe export .\_article\92_ultrasound_quiz\92_ultrasound_quiz.md
 .\claat-windows-amd64.exe export .\_article\93_buzzer_quiz\93_buzzer_quiz.md
 .\claat-windows-amd64.exe export .\_article\94_bluetooth_control\94_bluetooth_control.md
-.\claat-windows-amd64.exe export .\_article\95_smart_car\95_smart_car.md

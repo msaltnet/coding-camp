@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-15T00:53:20+09:00",
+  "id": "ultrasound-quiz",
+  "duration": 37,
+  "title": "초음파 센서로 LED 점등 시켜보기",
+  "summary": "초음파 센서로 LED 점등 시켜보기",
+  "source": ".\\_article\\92_ultrasound_quiz\\92_ultrasound_quiz.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "ultrasound-quiz"
+}

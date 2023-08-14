@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-14T22:13:22+09:00",
+  "id": "semiconductor",
+  "duration": 15,
+  "title": "전기와 반도체 그리고 프로그래밍",
+  "summary": "전기와 반도체, 프로그래밍 및 사용된 부품 소개",
+  "source": ".\\_article\\02_semiconductor\\02_semiconductor.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "semiconductor"
+}
