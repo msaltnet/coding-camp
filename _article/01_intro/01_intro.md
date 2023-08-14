@@ -11,7 +11,7 @@ feedback link: https://github.com/msaltnet/coding-camp
 ## 강사소개
 Duration: 0:02:00
 
-// 프로필 이미지
+![](./img/IMG_4789.JPEG)
 
 맛소금 - https://me.msalt.net
 

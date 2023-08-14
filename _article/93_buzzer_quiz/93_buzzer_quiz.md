@@ -80,8 +80,6 @@ Duration: 0:05:00
 도레미파솔라시도에 대한 소리를 발생시켜봤습니다. 모두 0.5초 동안 소리가 나게했는데, 이번에는 소리가 나는 시간까지 정해서 멜로디를 재생해 보겠습니다.
 
 
-
-
 ## Buzzer로 엘리제를 위하여 재생하기 - 퀴즈
 Duration: 0:06:00
 
@@ -105,7 +103,6 @@ Duration: 0:01:00
 1. 반도체를 통해서 신호를 마음대로 프로그래밍 할 수 있는 전자제품을 만들 수 있다.
 1. 그리고 그것들을 이용해서 LED를 깜빡거리게 할 수 있다.
 
-![semiconductor](./img/samsung-semi.png)
 
 ### 참고
 [슬기로운 전기생활을 위한 전기상식용어 ‘주파수’](https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EC%A0%84%EA%B8%B0%EC%83%9D%ED%99%9C%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EA%B8%B0%EC%83%81%EC%8B%9D%EC%9A%A9%EC%96%B4-%EC%A3%BC%ED%8C%8C%EC%88%98/)

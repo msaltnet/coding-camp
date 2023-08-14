@@ -41,7 +41,7 @@ Duration: 0:05:00
 
 중요한 것은 저항과 LED, 아두이노 핀은 하나씩 함께 연결되어야 합니다.
 
-// 회로도
+![circuit](./img/led-blink.png)
 
 ## 깜빡이게 프로그래밍하기 - 문제
 Duration: 0:10:00

@@ -45,6 +45,8 @@ Duration: 0:10:00
 
 중요한 것은 저항과 LED, 아두이노 핀은 함께 연결되어야 합니다.
 
+![circuits](./img/ultrasound-led-blink.png)
+
 ## 초음파 센서부터 장애물까지 거리 측정하여 LED 깜빡이는 프로그램 - 문제
 Duration: 0:10:00
 
