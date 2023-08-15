@@ -27,7 +27,7 @@
                   environment="web"
                   feedback-link="https://github.com/msaltnet/coding-camp">
     
-      <google-codelab-step label="Overview" duration="1">
+      <google-codelab-step label="시작하기" duration="1">
         <p>초음파 센서에 대해서 알아보고 아두이노를 통해서 초음파로 거리를 측정하는 방법에 대해서 설명해볼께요.</p>
 <h2 is-upgraded>사전 준비</h2>
 <ol type="1">
@@ -49,15 +49,15 @@
         <p>초음파는 일반적으로 사람들이 들을 수 있는 소리보다 높은 주파수의 음파를 뜻합니다.</p>
 <p>초음파(超音波, 영어: ultrasound(s), ultrasonic wave)는 인간이 들을 수 있는 가청 최대 한계 범위를 넘어서는 주파수를 갖는 주기적인 ‘음압&#39;(音壓, sound pressure)을 의미한다. 비록, 이러한 한계값이 사람마다 다르지만, 건강한 젊은 사람의 경우 이 값은 약 20kHz(20,000 Hz)이고 따라서 20kHz는 초음파를 설명하는 데 있어 유용한 하한(下限)이 된다. - 위키백과</p>
 <p class="image-container"><img alt="dolphin" src="img\\743cb7861b3df4b5.jfif"></p>
-<p>돌고래가 내는 소리를 사람이 못 듣고, 젊은 사람들이 듣는 소리를 노인들이 못듣기도 합니다.</p>
-<p>초음파를 이용해서 뱃속에 아기의 모습도 확인하고, 건강한지 확인할 때 사용하기도 합니다.</p>
+<p>돌고래가 내는 소리를 사람이 못 듣고, 젊은 사람들이 듣는 소리를 노인들이 못 듣기도 합니다.</p>
+<p>초음파를 이용해서 뱃속에 아기의 모습도 확인하고, 우리 몸이 건강한지 확인할 때 사용하기도 합니다.</p>
 <p class="image-container"><img alt="pregnant" src="img\\5e65289b709f07bd.jpg"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="초음파 센서" duration="3">
-        <p>초음파 센서는 초음파를 보낸후 반사되어 돌아오는 시간차를 측정해서 거리를 알 수 있는 센서로 초음파를 이용한 일종의 <code>거리 측정 센서</code> 입니다.</p>
+        <p>초음파 센서는 초음파를 보낸 후 반사되어 돌아오는 시간차를 측정해서 거리를 알 수 있는 센서로 초음파를 이용한 일종의 <code>거리 측정 센서</code> 입니다.</p>
 <p>전방으로 발사된 초음파는 금속, 목재, 유리, 종이 등 단단한 물체에는 거의 100% 반사되어 돌아오지만 옷감과 같은 일부물질은 초음파를 흡수하기 때문에 정확한 측정값이 어렵다는 단점이 있습니다.</p>
 <p class="image-container"><img alt="ultrasound sensor" src="img\\427e190a9ed67a52.png"></p>
 <p>왼쪽에 동그란 부분(TRIG)에서 초음파가 발생되고 , 오른쪽 부분(ECHO)에서 반사되어 돌아오는 초음파를 받습니다. 핀맵은 좌측부터 VCC,TRIG,ECHO,GND 입니다.</p>
@@ -81,7 +81,7 @@
 <p>그리고, 초음파는 초음파 센서부터 장애물까지 갔다가 돌아오므로 이동한 거리를 2로 나누면 초음파 센서부터 장애물까지의 거리가 됩니다.</p>
 <p>센서부터 장애물까지 거리 = 초음파가 이동한 거리 / 2</p>
 <p>계산을 할 때는 시간과 거리의 단위를 정확하게 변환해서 계산해야 합니다.</p>
-<aside class="special"><p> 도전!<br> 천둥과 번개는 같은 곳에서 발생하는데, 각각 음속과 광속으로 우리가 있는 곳에 도착합니다.<br> 음속은 340m/s이고, 광속은 299,792,458m/s입니다.<br> 그렇다면 번개가 발생한 곳까지의 거리는 어떻게 계산할 수 있을까요?<br></p>
+<aside class="special"><p> 천둥과 번개는 같은 곳에서 발생하는데, 각각 음속과 광속으로 우리가 있는 곳에 도착합니다.<br> 음속은 340m/s이고, 광속은 299,792,458m/s입니다. 빛은 1초에 지구를 7바퀴 반을 돌아요!<br> 그렇다면 번개가 발생한 곳까지의 거리는 어떻게 계산할 수 있을까요?<br></p>
 </aside>
 
 
@@ -98,7 +98,8 @@
 </ul>
 <p>아래와 같이 회로를 구성해 주세요.</p>
 <p class="image-container"><img alt="circuit" src="img\\e5884873ab2c1904.png"></p>
-<p>아두이노 IDE를 실행해서 아래 코드를 입력해 주세요. 코드의 설명은 주석으로 달아놨으니 나중에 천천히 이해해 보세요.</p>
+<p>아두이노 IDE를 실행해서 아래 코드를 입력해 주세요.</p>
+<p>코드의 설명을 함께 적어놨으니 나중에 천천히 이해해 보세요.</p>
 <pre><code language="language-c" class="language-c">#define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 
@@ -155,7 +156,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 </ul>
 <p class="image-container"><img alt="dolphins" src="img\\7c101d2f61fc1fb8.jpg"></p>
 <h2 is-upgraded>참고</h2>
-<p><a href="https://m.blog.naver.com/boilmint7/220926404472" target="_blank">아두이노 초음파센서(HC-SR04)사용 예제 설명.</a></p>
+<p><a href="https://m.blog.naver.com/boilmint7/220926404472" target="_blank">아두이노 초음파센서(HC-SR04)사용 예제 설명</a></p>
 
 
       </google-codelab-step>
