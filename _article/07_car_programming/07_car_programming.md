@@ -16,6 +16,192 @@ Duration: 0:03:00
 ## 반도체와 신호
 Duration: 0:03:00
 
+
+
+```c
+#define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
+#define OCT_5_E 659 //5옥타브 미에 해당하는 주파수
+#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
+
+#define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
+#define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
+#define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
+
+bool isWaiting = false;
+int waitingCount = 0;
+void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
+  Serial.begin(9600); //PC와 시리얼 통신을 설정
+
+  pinMode(LED_PIN_NUM, OUTPUT); // LED의 긴다리 핀을 출력으로 설정
+  pinMode(TRIG_PIN_NUM, OUTPUT); //TRIG 핀과 연결된 아두이노 핀을 출력으로 설정
+  pinMode(ECHO_PIN_NUM, INPUT); //ECHO 핀과 연결된 아두이노 핀을 입력으로 설정
+}
+
+void loop() { //loop는 계속 반복 실행되는 함수 입니다.
+  long duration, distance;
+
+  //거리를 측정
+  distance = get_distance();
+  if (distance > STOP_DISTANCE_CM) {
+    //속도가져오기
+    int speed = getSpeed(distance);
+    //속도로 이동하기
+    moveCar(speed);
+  } else {
+    waitCar();
+  }
+  delay(1000); // 1초 대기
+}
+
+void waitCar() {
+  if (isWaiting) {
+     // 대기 중일때 동작
+    if ()
+  } else {
+    // 이동 중일때 동작
+  }
+}
+
+void loop() { //loop는 계속 반복 실행되는 함수 입니다.
+    digitalWrite(LED_PIN_NUM, HIGH); // LED와 연결된 핀에 전압을 5V로 설정
+    delay(1000); // 1초(1000밀리초) 동안 대기
+    digitalWrite(LED_PIN_NUM, LOW); // LED와 연결된 핀에 전압을 0V로 설정
+    delay(1000);
+}
+
+// 거리를 측정해서 반환하는 함수입니다.
+long get_distance()
+{
+  long duration, distance;
+
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
+  delayMicroseconds(2); // 2마이크로세컨드(0.000002초) 대기, 센서의 동작을 기다림
+
+  digitalWrite(TRIG_PIN_NUM, HIGH); //TRIG 핀의 신호를 HIGH로 설정
+  delayMicroseconds(10);  // 10마이크로세컨드(0.00001초) 대기, 센서의 동작을 기다림
+
+  digitalWrite(TRIG_PIN_NUM, LOW); //TRIG 핀의 신호를 LOW로 설정
+
+  duration = pulseIn(ECHO_PIN_NUM, HIGH); //물체에 반사되어돌아온 초음파의 시간을 변수에 저장합니다.
+  // "pulseIn" Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
+
+  // 거리를 구하는 공식의 단위를 맞춰서 계산해야 합니다.
+  // 34000 * 초음파가 물체로 부터 반사되어 돌아오는시간 / 1000000 / 2 (왕복거리이므로 나누기 2를 해줍니다.)
+  // 각각 m(미터) -> cm(센티미터), s(초) -> micro sec(마이크로 초)
+  // 식을 정리하면 아래와 같습니다.
+  distance = duration * 17 / 1000; 
+
+  // PC모니터로 초음파 거리값을 확인 하는 코드 입니다.
+  Serial.println(duration ); // 초음파가 반사되어 돌아오는 시간을 보여줍니다.
+  Serial.print("\nDIstance : ");
+  Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여줍니다.
+  Serial.println(" cm");
+
+  delay(1000); // 1초 대기하고 다시 측정해서 값을 보여줍니다.
+
+  return distance
+}
+```
+
+```c
+#define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
+#define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
+#define MOTOR_B_a 5     //모터B의 +출력핀은 5번핀입니다
+#define MOTOR_B_b 6     //모터B의 -출력핀은 6번핀입니다
+#define MOTOR_SPEED 150 //모터의 기준속력입니다(0~255)
+
+unsigned char m_a_spd = 0, m_b_spd = 0; //모터의 속력을 저장하는 전역변수
+boolean m_a_dir = 0, m_b_dir = 0;       //모터의 방향을 결정하는 전역변수
+
+void setup()
+{
+  //모터 제어 핀들을 출력으로 설정합니다.
+  pinMode(MOTOR_A_a, OUTPUT);
+  pinMode(MOTOR_A_b, OUTPUT);
+  pinMode(MOTOR_B_a, OUTPUT);
+  pinMode(MOTOR_B_b, OUTPUT);
+
+  Serial.begin(9600);       //시리얼 통신 초기화
+  Serial.println("Hello!"); //터미널 작동 확인용 문자열
+}
+
+void loop()
+{
+  unsigned char bt_cmd = 0;   //명령어 저장용 문자형 변수
+
+  if (Serial.available())   //데이터가 입력되었을 때
+  {
+    bt_cmd = Serial.read(); //변수에 입력된 데이터 저장
+    rc_ctrl_val(bt_cmd);     //입력된 데이터에 따라 모터에 입력될 변수를 조정하는 함수
+  }
+  motor_drive();             //모터를 구동하는 함수
+}
+
+void rc_ctrl_val(unsigned char cmd) //입력된 데이터에 따라 모터에 입력될 변수를 조정하는 함수
+{
+  if(cmd == 'w')  //'w'가 입력되었을 때, 전진
+  {
+    m_a_dir = 0;  //모터A 정방향
+    m_b_dir = 0;  //모터B 정방향
+    m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
+    m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
+  }
+  else if(cmd == 'a')  //'a'가 입력되었을 때, 제자리 좌회전
+  {
+    m_a_dir = 1;  //모터A 역방향
+    m_b_dir = 0;  //모터B 정방향
+    m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
+    m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
+  }
+  else if(cmd == 'd')  //'d'가 입력되었을 때, 제자리 우회전
+  {
+    m_a_dir = 0;  //모터A 정방향
+    m_b_dir = 1;  //모터B 역방향
+    m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
+    m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
+  }
+  else if(cmd == 's')  //'s'가 입력되었을 때, 후진
+  {
+    m_a_dir = 1;  //모터A 역방향
+    m_b_dir = 1;  //모터B 역방향
+    m_a_spd = MOTOR_SPEED;  //모터A의 속력값 조정
+    m_b_spd = MOTOR_SPEED;  //모터B의 속력값 조정
+  }
+  else if(cmd == 'x')
+  {
+    m_a_dir = 0;  //모터A 정방향
+    m_b_dir = 0;  //모터B 정방향
+    m_a_spd = 0;  //모터A의 정지
+    m_b_spd = 0;  //모터B의 정지
+  }
+}
+
+void motor_drive()  //모터를 구동하는 함수
+{
+  if(m_a_dir == 0)
+  {
+    digitalWrite(MOTOR_A_a, LOW);     //모터A+ LOW
+    analogWrite(MOTOR_A_b, m_a_spd);  //모터A-의 속력을 PWM 출력
+  }
+  else
+  {
+    analogWrite(MOTOR_A_a, m_a_spd);  //모터A+의 속력을 PWM 출력
+    digitalWrite(MOTOR_A_b, LOW);     //모터A- LOW
+  }
+  if(m_b_dir == 1)
+  {
+    digitalWrite(MOTOR_B_a, LOW);     //모터B+ LOW
+    analogWrite(MOTOR_B_b, m_b_spd);  //모터B-의 속력을 PWM 출력
+  }
+  else
+  {
+    analogWrite(MOTOR_B_a, m_b_spd);  //모터B+의 속력을 PWM 출력
+    digitalWrite(MOTOR_B_b, LOW);     //모터B- LOW
+  }
+}
+```
+
+
 ## 정리
 Duration: 0:03:00
 
@@ -28,5 +214,5 @@ Duration: 0:03:00
 - 전자 기기를 동작하는 명령어를 정리한 것이 프로그램이고, 프로그램을 만드는 것을 프로그래밍이라고 한다.
 
 ### 참고자료
-- [자석의 원리 아셨습니까? N극, S극의 근원은? 자석의 자기장 어떻게 나올까?](https://www.youtube.com/watch?v=FU29W6B1eeE)
-- [아두이노 부품 설명](https://edu.goorm.io/learn/lecture/203/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8-%EA%B8%B0%EC%B4%88/lesson/6063/%EB%B6%80%ED%92%88-%EC%84%A4%EB%AA%85-%EA%B8%B0%EC%B4%88)
+[블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
+[아두이노 스마트 RC카 블록코딩 메뉴얼](https://www.devicemart.co.kr/goods/download?id=1385495&rank=2)
