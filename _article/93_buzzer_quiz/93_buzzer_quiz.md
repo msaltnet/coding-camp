@@ -122,29 +122,37 @@ Duration: 0:15:00
 #define OCT_5_D 587 //5옥타브 레에 해당하는 주파수
 #define OCT_5_E 659 //5옥타브 미에 해당하는 주파수
 #define OCT_5_F 698 //5옥타브 파에 해당하는 주파수
+#define MUTE 0 //5옥타브 파에 해당하는 주파수
 
 struct sound {
   int tone;
   int duration_ms;
 };
 
-#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
+#define BUZZER_PIN_NUM 7//아두이노와 연결된 핀 번호
 struct sound sound_list[] = {
-  {OCT_4_G, 500}
-  {OCT_4_A, 500}
-  {OCT_4_B, 500}
-  {OCT_5_E, 700}
-  {OCT_5_D, 1000}
+  {OCT_4_G, 200},
+  {OCT_4_A, 250},
+  {MUTE, 100},
+  {OCT_4_B, 300},
+  {OCT_5_E, 250},
+  {OCT_5_D, 550}
 };
-int sound_list_count = 5;
+int sound_list_count = 6;
 
 void setup() {
+  Serial.begin(9600); //PC와 시리얼 통신을 설정
 }
 
 void loop() {
   for(int i = 0; i < sound_list_count; i++) //sound_list_count 만큼 반복
   {
-    tone(BUZZER_PIN_NUM, sound_list[i].tone, sound_list[i].duration_ms); //sound_list의 i번째 주파수를 재생
+    if (sound_list[i].tone > 0) {
+      tone(BUZZER_PIN_NUM, sound_list[i].tone); //sound_list의 i번째 주파수를 재생
+    } else {
+      noTone(BUZZER_PIN_NUM);
+    }
+    delay(sound_list[i].duration_ms); //1초 대기
   }
   noTone(BUZZER_PIN_NUM); //재생중지
   delay(1000); //1초 대기
