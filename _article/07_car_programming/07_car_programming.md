@@ -51,6 +51,7 @@ Duration: 0:05:00
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
+#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -58,11 +59,11 @@ Duration: 0:05:00
 #define MOTOR_B_b 6     //모터B의 -출력핀은 6번핀입니다
 
 #define MOTOR_SPEED_0 0 //모터의 속력을 단계별로 나눴습니다 (0~255)
-#define MOTOR_SPEED_1 50
-#define MOTOR_SPEED_2 100
-#define MOTOR_SPEED_3 150
+#define MOTOR_SPEED_1 120
+#define MOTOR_SPEED_2 150
+#define MOTOR_SPEED_3 170
 #define MOTOR_SPEED_4 200
-#define MOTOR_SPEED_MAX 255
+#define MOTOR_SPEED_MAX 250
 
 void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
   //모터 제어 핀들을 출력으로 설정합니다.
@@ -92,7 +93,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
   } else {
     waitCar();
   }
-  delay(1000); // 1초 대기
+  delay(CHECK_INTERVAL); // CHECK_INTERVAL 만큼 대기
 }
 
 void waitCar() {
@@ -146,7 +147,7 @@ long getDistance() { // 거리를 측정해서 반환하는 함수입니다.
   // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
-  return distance
+  return distance;
 }
 
 void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진하는 함수
@@ -212,6 +213,7 @@ void setLed(bool on, bool isRed) {
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
+#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -219,11 +221,11 @@ void setLed(bool on, bool isRed) {
 #define MOTOR_B_b 6     //모터B의 -출력핀은 6번핀입니다
 
 #define MOTOR_SPEED_0 0 //모터의 속력을 단계별로 나눴습니다 (0~255)
-#define MOTOR_SPEED_1 50
-#define MOTOR_SPEED_2 100
-#define MOTOR_SPEED_3 150
+#define MOTOR_SPEED_1 120
+#define MOTOR_SPEED_2 150
+#define MOTOR_SPEED_3 170
 #define MOTOR_SPEED_4 200
-#define MOTOR_SPEED_MAX 255
+#define MOTOR_SPEED_MAX 250
 
 void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
   //모터 제어 핀들을 출력으로 설정합니다.
@@ -258,7 +260,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
   } else {
     waitCar();
   }
-  delay(1000); // 1초 대기
+  delay(CHECK_INTERVAL); // CHECK_INTERVAL 만큼 대기
 }
 
 void waitCar() {
@@ -330,7 +332,7 @@ long getDistance() { // 거리를 측정해서 반환하는 함수입니다.
   // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
-  return distance
+  return distance;
 }
 
 void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진하는 함수
@@ -385,6 +387,7 @@ void makeBeep() {
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
+#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -392,11 +395,11 @@ void makeBeep() {
 #define MOTOR_B_b 6     //모터B의 -출력핀은 6번핀입니다
 
 #define MOTOR_SPEED_0 0 //모터의 속력을 단계별로 나눴습니다 (0~255)
-#define MOTOR_SPEED_1 50
-#define MOTOR_SPEED_2 100
-#define MOTOR_SPEED_3 150
+#define MOTOR_SPEED_1 120
+#define MOTOR_SPEED_2 150
+#define MOTOR_SPEED_3 170
 #define MOTOR_SPEED_4 200
-#define MOTOR_SPEED_MAX 255
+#define MOTOR_SPEED_MAX 250
 
 void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
   //모터 제어 핀들을 출력으로 설정합니다.
@@ -431,7 +434,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
   } else {
     waitCar();
   }
-  delay(1000); // 1초 대기
+  delay(CHECK_INTERVAL); // CHECK_INTERVAL 만큼 대기
 }
 
 void waitCar() {
@@ -512,7 +515,7 @@ long getDistance() { // 거리를 측정해서 반환하는 함수입니다.
   // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
-  return distance
+  return distance;
 }
 
 void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진하는 함수
@@ -595,12 +598,13 @@ void waitCar() {
 코드 내용은 천천히 혼자 스스로 이해해보세요.
 
 ```c
-#define BUZZER_PIN_NUM 2//아두이노와 연결된 Buzzer 핀 번호
+#define BUZZER_PIN_NUM 7//아두이노와 연결된 Buzzer 핀 번호
 #define BUZZER_FREQUENCY 784 // 5옥타브 솔 주파수
 #define BUZZER_DURATION 100 // 삐-소리 나는 시간
+#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
 
-#define LED_GREEN_PIN_NUM 7 // 녹색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
-#define LED_RED_PIN_NUM 4 // 빨간색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
+#define LED_GREEN_PIN_NUM 4 // 녹색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
+#define LED_RED_PIN_NUM 2 // 빨간색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
@@ -612,11 +616,11 @@ void waitCar() {
 #define MOTOR_B_b 6     //모터B의 -출력핀은 6번핀입니다
 
 #define MOTOR_SPEED_0 0 //모터의 속력을 단계별로 나눴습니다 (0~255)
-#define MOTOR_SPEED_1 50
-#define MOTOR_SPEED_2 100
-#define MOTOR_SPEED_3 150
+#define MOTOR_SPEED_1 120
+#define MOTOR_SPEED_2 150
+#define MOTOR_SPEED_3 170
 #define MOTOR_SPEED_4 200
-#define MOTOR_SPEED_MAX 255
+#define MOTOR_SPEED_MAX 250
 
 bool isMoving = false;
 int waitingCount = 0;
@@ -650,24 +654,35 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
     //정해진 속도로 전진하기
     driveCarForward(speed);
 
+    Serial.print(distance); //터미널 작동 확인용 문자열
+    Serial.print(" moving "); //터미널 작동 확인용 문자열
+    Serial.println(speed); //터미널 작동 확인용 문자열
+
     setLed(true, false); // 녹색 LED를 켭니다.
+    waitingCount = 0; // 기다린 횟수를 0로 만듭니다.
+    isMoving = true; // 주행중 상태로 변경합니다.
   } else {
     waitCar();
   }
-  delay(1000); // 1초 대기
+  delay(CHECK_INTERVAL); // CHECK_INTERVAL 만큼 대기
 }
 
 void waitCar() {
+  Serial.print(isMoving); //터미널 작동 확인용 문자열
+  Serial.print(" waiting "); //터미널 작동 확인용 문자열
+  Serial.println(waitingCount); //터미널 작동 확인용 문자열
+
   if (isMoving) { // 주행중 상태인지 체크합니다.
     driveCarForward(MOTOR_SPEED_0); //자동차를 정지합니다.
 
-    setLed(true, false); // 빨간색 LED를 켭니다.
+    setLed(true, true); // 빨간색 LED를 켭니다.
 
     makeBeep(); // 삐- 소리를 짧게 재생합니다.
 
     waitingCount = 1; // 기다린 횟수를 1로 만듭니다.
+    isMoving = false;
   } else {
-    if (waitingCount < 5) {
+    if (waitingCount < 10) {
       waitingCount = waitingCount + 1;
     } else {
       turnRight(); //자동차를 오른쪽으로 회전합니다.
@@ -680,6 +695,8 @@ void waitCar() {
 }
 
 void turnRight() {
+  Serial.println("turnRight"); //터미널 작동 확인용 문자열
+
   //두 모터를 반대 방향으로 돌립니다.
   digitalWrite(MOTOR_A_a, LOW); //모터A+ LOW
   analogWrite(MOTOR_A_b, MOTOR_SPEED_3); //모터A-의 속력을 PWM 출력
@@ -687,7 +704,7 @@ void turnRight() {
   analogWrite(MOTOR_B_a, LOW); //모터B+의 속력을 PWM 출력
   digitalWrite(MOTOR_B_b, MOTOR_SPEED_3); //모터B- LOW
 
-  delay(500); // 0.5초 동안 이동합니다.
+  delay(300); // 0.5초 동안 이동합니다.
 
   //모터를 정지합니다.
   digitalWrite(MOTOR_A_a, LOW); //모터A+ LOW
@@ -705,6 +722,10 @@ void makeBeep() {
 }
 
 void setLed(bool on, bool isRed) {
+  Serial.print(on); //터미널 작동 확인용 문자열
+  Serial.print(" LED "); //터미널 작동 확인용 문자열
+  Serial.println(isRed); //터미널 작동 확인용 문자열
+
   if (!on) {
     digitalWrite(LED_GREEN_PIN_NUM, LOW); // LED와 연결된 핀의 출력을 LOW로 설정합니다.
     digitalWrite(LED_RED_PIN_NUM, LOW);
@@ -767,7 +788,7 @@ long getDistance() { // 거리를 측정해서 반환하는 함수입니다.
   // 식을 정리하면 아래와 같습니다.
   distance = duration * 17 / 1000; 
 
-  return distance
+  return distance;
 }
 
 void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진하는 함수
