@@ -60,33 +60,33 @@ Buzzer 소자는 아두이노와 바로 연결해서 사용할 수 있습니다.
 https://m.blog.naver.com/geniusus/221549772862
 
 ```c
-#define OCT_4_C 261 //4옥타브 도에 해당하는 주파수
-#define OCT_4_D 294 //4옥타브 레에 해당하는 주파수
-#define OCT_4_E 330 //4옥타브 미에 해당하는 주파수
-#define OCT_4_F 349 //4옥타브 파에 해당하는 주파수
-#define OCT_4_G 392 //4옥타브 솔에 해당하는 주파수
-#define OCT_4_A 440 //4옥타브 라에 해당하는 주파수
-#define OCT_4_B 494 //4옥타브 시에 해당하는 주파수
-#define OCT_5_C 523 //5옥타브 도에 해당하는 주파수
+#define NOTE_C4 261 //4옥타브 도에 해당하는 주파수
+#define NOTE_D4 294 //4옥타브 레에 해당하는 주파수
+#define NOTE_E4 330 //4옥타브 미에 해당하는 주파수
+#define NOTE_F4 349 //4옥타브 파에 해당하는 주파수
+#define NOTE_G4 392 //4옥타브 솔에 해당하는 주파수
+#define NOTE_A4 440 //4옥타브 라에 해당하는 주파수
+#define NOTE_B4 494 //4옥타브 시에 해당하는 주파수
+#define NOTE_C5 523 //5옥타브 도에 해당하는 주파수
 
 #define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
-int tones_count = 8; // tones 갯수 도레미파솔라시도 8개
+int tonesCount = 8; // tones 갯수 도레미파솔라시도 8개
 int tones[] = {
-  OCT_4_C,
-  OCT_4_D,
-  OCT_4_E,
-  OCT_4_F,
-  OCT_4_G,
-  OCT_4_A,
-  OCT_4_B,
-  OCT_5_C
+  NOTE_C4,
+  NOTE_D4,
+  NOTE_E4,
+  NOTE_F4,
+  NOTE_G4,
+  NOTE_A4,
+  NOTE_B4,
+  NOTE_C5
 }; //4옥타브 도레미파솔라시도에 해당하는 주파수
 
 void setup() {
 }
 
 void loop() {
-  for(int i = 0; i < tones_count; i++) //sound_list_count 만큼 반복
+  for(int i = 0; i < tonesCount; i++) //soundListCount 만큼 반복
   {
     tone(BUZZER_PIN_NUM, tones[i]); //tones의 i번째 주파수를 재생
     delay(500); //0.5초 동안 재생
@@ -106,53 +106,136 @@ Duration: 0:15:00
 
 연주할 음을 sound_list라는 배열에 넣어서 차례대로 연주하도록 하였습니다.
 
-`tone` 함수를 정해진 시간 동안 동작하도록 `tone(pin, frequency, duration)`와 같이 3개의 인자와 함께 실행해주었습니다.
-
 코드를 천천히 이해해보세요.
 
 ```c
-#define OCT_4_C 261 //4옥타브 도에 해당하는 주파수
-#define OCT_4_D 294 //4옥타브 레에 해당하는 주파수
-#define OCT_4_E 330 //4옥타브 미에 해당하는 주파수
-#define OCT_4_F 349 //4옥타브 파에 해당하는 주파수
-#define OCT_4_G 392 //4옥타브 솔에 해당하는 주파수
-#define OCT_4_A 440 //4옥타브 라에 해당하는 주파수
-#define OCT_4_B 494 //4옥타브 시에 해당하는 주파수
-#define OCT_5_C 523 //5옥타브 도에 해당하는 주파수
-#define OCT_5_D 587 //5옥타브 레에 해당하는 주파수
-#define OCT_5_E 659 //5옥타브 미에 해당하는 주파수
-#define OCT_5_F 698 //5옥타브 파에 해당하는 주파수
-#define MUTE 0 //5옥타브 파에 해당하는 주파수
+#define NOTE_B0  31
+#define NOTE_C1  33
+#define NOTE_CS1 35
+#define NOTE_D1  37
+#define NOTE_DS1 39
+#define NOTE_E1  41
+#define NOTE_F1  44
+#define NOTE_FS1 46
+#define NOTE_G1  49
+#define NOTE_GS1 52
+#define NOTE_A1  55
+#define NOTE_AS1 58
+#define NOTE_B1  62
+#define NOTE_C2  65
+#define NOTE_CS2 69
+#define NOTE_D2  73
+#define NOTE_DS2 78
+#define NOTE_E2  82
+#define NOTE_F2  87
+#define NOTE_FS2 93
+#define NOTE_G2  98
+#define NOTE_GS2 104
+#define NOTE_A2  110
+#define NOTE_AS2 117
+#define NOTE_B2  123
+#define NOTE_C3  131
+#define NOTE_CS3 139
+#define NOTE_D3  147
+#define NOTE_DS3 156
+#define NOTE_E3  165
+#define NOTE_F3  175
+#define NOTE_FS3 185
+#define NOTE_G3  196
+#define NOTE_GS3 208
+#define NOTE_A3  220
+#define NOTE_AS3 233
+#define NOTE_B3  247
+#define NOTE_C4  262
+#define NOTE_CS4 277
+#define NOTE_D4  294
+#define NOTE_DS4 311
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_FS4 370
+#define NOTE_G4  392
+#define NOTE_GS4 415
+#define NOTE_A4  440
+#define NOTE_AS4 466
+#define NOTE_B4  494
+#define NOTE_C5  523
+#define NOTE_CS5 554
+#define NOTE_D5  587
+#define NOTE_DS5 622
+#define NOTE_E5  659
+#define NOTE_F5  698
+#define NOTE_FS5 740
+#define NOTE_G5  784
+#define NOTE_GS5 831
+#define NOTE_A5  880
+#define NOTE_AS5 932
+#define NOTE_B5  988
+#define NOTE_C6  1047
+#define NOTE_CS6 1109
+#define NOTE_D6  1175
+#define NOTE_DS6 1245
+#define NOTE_E6  1319
+#define NOTE_F6  1397
+#define NOTE_FS6 1480
+#define NOTE_G6  1568
+#define NOTE_GS6 1661
+#define NOTE_A6  1760
+#define NOTE_AS6 1865
+#define NOTE_B6  1976
+#define NOTE_C7  2093
+#define NOTE_CS7 2217
+#define NOTE_D7  2349
+#define NOTE_DS7 2489
+#define NOTE_E7  2637
+#define NOTE_F7  2794
+#define NOTE_FS7 2960
+#define NOTE_G7  3136
+#define NOTE_GS7 3322
+#define NOTE_A7  3520
+#define NOTE_AS7 3729
+#define NOTE_B7  3951
+#define NOTE_C8  4186
+#define NOTE_CS8 4435
+#define NOTE_D8  4699
+#define NOTE_DS8 4978
+
+#define MUTE 0 //무음 처리를 위해서 추가
+
+#define DURTION_WHOLE     0
+#define DURTION_HALF      400
+#define DURTION_QUARTER   200
+#define DURTION_EIGHTH    100
+#define DURTION_SIXTEENTH 50
 
 struct sound {
   int tone;
-  int duration_ms;
+  int durationMs;
 };
 
 #define BUZZER_PIN_NUM 7//아두이노와 연결된 핀 번호
-struct sound sound_list[] = {
-  {OCT_4_G, 200},
-  {OCT_4_A, 250},
-  {MUTE, 100},
-  {OCT_4_B, 300},
-  {OCT_5_E, 250},
-  {OCT_5_D, 550}
+struct sound soundList[] = { //주파수와 음의 길이 정보를 갖는 구조체의 배열
+  {NOTE_G4, DURTION_QUARTER},
+  {NOTE_A4, DURTION_QUARTER + DURTION_EIGHTH},
+  {MUTE,    DURTION_QUARTER},
+  {NOTE_B4, DURTION_QUARTER + DURTION_EIGHTH},
+  {NOTE_E5, DURTION_QUARTER},
+  {NOTE_D5, DURTION_HALF + DURTION_QUARTER}
 };
-int sound_list_count = 6;
+int soundListCount = 6;
 
 void setup() {
   Serial.begin(9600); //PC와 시리얼 통신을 설정
 }
 
 void loop() {
-  for(int i = 0; i < sound_list_count; i++) //sound_list_count 만큼 반복
+  for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
   {
-    if (sound_list[i].tone > 0) {
-      tone(BUZZER_PIN_NUM, sound_list[i].tone); //sound_list의 i번째 주파수를 재생
-    } else {
+    if (soundList[i].tone == MUTE) { //무음인 경우
       noTone(BUZZER_PIN_NUM);
+    } else {
+      tone(BUZZER_PIN_NUM, soundList[i].tone); //soundList의 i번째 주파수를 재생
     }
-    delay(sound_list[i].duration_ms); //1초 대기
+    delay(soundList[i].durationMs); //1초 대기
   }
   noTone(BUZZER_PIN_NUM); //재생중지
   delay(1000); //1초 대기
@@ -177,17 +260,95 @@ Duration: 0:05:00
 
 
 ```c
-#define OCT_4_C 261 //4옥타브 도에 해당하는 주파수
-#define OCT_4_D 294 //4옥타브 레에 해당하는 주파수
-#define OCT_4_E 330 //4옥타브 미에 해당하는 주파수
-#define OCT_4_F 349 //4옥타브 파에 해당하는 주파수
-#define OCT_4_G 392 //4옥타브 솔에 해당하는 주파수
-#define OCT_4_A 440 //4옥타브 라에 해당하는 주파수
-#define OCT_4_B 494 //4옥타브 시에 해당하는 주파수
-#define OCT_5_C 523 //5옥타브 도에 해당하는 주파수
-#define OCT_5_D 587 //5옥타브 레에 해당하는 주파수
-#define OCT_5_E 659 //5옥타브 미에 해당하는 주파수
-#define OCT_5_F 698 //5옥타브 파에 해당하는 주파수
+#define NOTE_B0  31
+#define NOTE_C1  33
+#define NOTE_CS1 35
+#define NOTE_D1  37
+#define NOTE_DS1 39
+#define NOTE_E1  41
+#define NOTE_F1  44
+#define NOTE_FS1 46
+#define NOTE_G1  49
+#define NOTE_GS1 52
+#define NOTE_A1  55
+#define NOTE_AS1 58
+#define NOTE_B1  62
+#define NOTE_C2  65
+#define NOTE_CS2 69
+#define NOTE_D2  73
+#define NOTE_DS2 78
+#define NOTE_E2  82
+#define NOTE_F2  87
+#define NOTE_FS2 93
+#define NOTE_G2  98
+#define NOTE_GS2 104
+#define NOTE_A2  110
+#define NOTE_AS2 117
+#define NOTE_B2  123
+#define NOTE_C3  131
+#define NOTE_CS3 139
+#define NOTE_D3  147
+#define NOTE_DS3 156
+#define NOTE_E3  165
+#define NOTE_F3  175
+#define NOTE_FS3 185
+#define NOTE_G3  196
+#define NOTE_GS3 208
+#define NOTE_A3  220
+#define NOTE_AS3 233
+#define NOTE_B3  247
+#define NOTE_C4  262
+#define NOTE_CS4 277
+#define NOTE_D4  294
+#define NOTE_DS4 311
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_FS4 370
+#define NOTE_G4  392
+#define NOTE_GS4 415
+#define NOTE_A4  440
+#define NOTE_AS4 466
+#define NOTE_B4  494
+#define NOTE_C5  523
+#define NOTE_CS5 554
+#define NOTE_D5  587
+#define NOTE_DS5 622
+#define NOTE_E5  659
+#define NOTE_F5  698
+#define NOTE_FS5 740
+#define NOTE_G5  784
+#define NOTE_GS5 831
+#define NOTE_A5  880
+#define NOTE_AS5 932
+#define NOTE_B5  988
+#define NOTE_C6  1047
+#define NOTE_CS6 1109
+#define NOTE_D6  1175
+#define NOTE_DS6 1245
+#define NOTE_E6  1319
+#define NOTE_F6  1397
+#define NOTE_FS6 1480
+#define NOTE_G6  1568
+#define NOTE_GS6 1661
+#define NOTE_A6  1760
+#define NOTE_AS6 1865
+#define NOTE_B6  1976
+#define NOTE_C7  2093
+#define NOTE_CS7 2217
+#define NOTE_D7  2349
+#define NOTE_DS7 2489
+#define NOTE_E7  2637
+#define NOTE_F7  2794
+#define NOTE_FS7 2960
+#define NOTE_G7  3136
+#define NOTE_GS7 3322
+#define NOTE_A7  3520
+#define NOTE_AS7 3729
+#define NOTE_B7  3951
+#define NOTE_C8  4186
+#define NOTE_CS8 4435
+#define NOTE_D8  4699
+#define NOTE_DS8 4978
 
 struct sound {
   int tone;
@@ -195,22 +356,23 @@ struct sound {
 };
 
 #define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
-struct sound sound_list[] = {
-  {OCT_4_G, 500}
-  {OCT_4_A, 500}
-  {OCT_4_B, 500}
-  {OCT_5_E, 700}
-  {OCT_5_D, 1000}
+struct sound soundList[] = {
+  {NOTE_G4, DURTION_QUARTER},
+  {NOTE_A4, DURTION_QUARTER + DURTION_EIGHTH},
+  {MUTE,    DURTION_QUARTER},
+  {NOTE_B4, DURTION_QUARTER + DURTION_EIGHTH},
+  {NOTE_E5, DURTION_QUARTER},
+  {NOTE_D5, DURTION_HALF + DURTION_QUARTER}
 };
-int sound_list_count = 5;
+int soundListCount = 6;
 
 void setup() {
 }
 
 void loop() {
-  for(int i = 0; i < sound_list_count; i++) //sound_list_count 만큼 반복
+  for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
   {
-    tone(BUZZER_PIN_NUM, sound_list[i].tone, sound_list[i].duration_ms); //sound_list의 i번째 주파수를 재생
+    tone(BUZZER_PIN_NUM, soundList[i].tone, soundList[i].duration_ms); //soundList의 i번째 주파수를 재생
   }
   noTone(BUZZER_PIN_NUM); //재생중지
   delay(1000); //1초 대기

@@ -136,33 +136,33 @@ void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
 }
 
 void loop() { //loop는 계속 반복 실행되는 함수 입니다.
-  int blink_interval = 0;
-  long distance = get_distance(); // 거리를 측정해서 distance에 저장합니다.
-  int total_duration = 0;
+  int blinkInterval = 0;
+  long distance = getDistance(); // 거리를 측정해서 distance에 저장합니다.
+  int totalDuration = 0;
 
   // 거리에 따라서 깜빡이는 속도를 다르게 설정합니다.
   if (distance > 40) {
     // 40cm보다 멀리 있을 때 설정
-    blink_interval = 1000;
+    blinkInterval = 1000;
   } else if (distance > 30) {
     // 30cm보다 멀리 있을 때 설정
-    blink_interval = 700;
+    blinkInterval = 700;
   } else if (distance > 20) {
     // 20cm보다 멀리 있을 때 설정
-    blink_interval = 500;
+    blinkInterval = 500;
   } else if (distance > 10) {
     // 10cm보다 멀리 있을 때 설정
-    blink_interval = 200;
+    blinkInterval = 200;
   } else {
     // 10cm보다 가까이 있을 때 설정
-    blink_interval = 100;
+    blinkInterval = 100;
   }
 
   while (true) { // 계속 반복되는 블럭
-    blink_led(blink_interval) // blink_interval 동안 led를 깜빡임
-    total_duration = total_duration + blink_interval; // 깜빡인 시간을 더함
+    blink_led(blinkInterval) // blinkInterval 동안 led를 깜빡임
+    totalDuration = totalDuration + blinkInterval; // 깜빡인 시간을 더함
 
-    if (total_duration >= 2000){
+    if (totalDuration >= 2000){
       // 깜빡인 시간을 모두 더한 값이 2초 이상이면 반복을 중단함
       break;
     }
@@ -180,7 +180,7 @@ void blink_led(int duration)
 }
 
 // 거리를 측정해서 반환하는 함수입니다.
-long get_distance()
+long getDistance()
 {
   long duration, distance;
 
@@ -206,8 +206,6 @@ long get_distance()
   Serial.print("\nDIstance : ");
   Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여줍니다.
   Serial.println(" cm");
-
-  delay(1000); // 1초 대기하고 다시 측정해서 값을 보여줍니다.
 
   return distance
 }
