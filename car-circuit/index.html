@@ -46,11 +46,15 @@
       <google-codelab-step label="전원 회로 연결하기" duration="3">
         <p>우선, 전원이 공급되는 스위치를 먼저 배선해보겠습니다.</p>
 <p>먼저 스위치의 선을 미니브레드보드에 그림과 같이 연결합니다.</p>
+<p class="image-container"><img alt="image1" src="img\\cbc822b5625d97aa.png"></p>
 <p>모터의 전원으로 사용되는 AA배터리홀더의 선도 그림과같이 연결합니다.</p>
+<p class="image-container"><img alt="image2" src="img\\92229d2687967926.png"></p>
 <p>보드 전원 공급을 위해 9V 배터리 홀더의 전원을 아두이노 보드의 Vin핀으로 연결합니다.</p>
 <p>GND라인은 스위치를 거쳐야 하기 때문에 브레드보드에 그림과 같이 연결합니다.</p>
+<p class="image-container"><img alt="image3" src="img\\8e0ce28e63ff6ede.png"></p>
 <p>M/M 점퍼와이어 한줄로 아두이노 보드의 GND를 브레드보드에 그림과같이 연결합니다.</p>
 <p>스위치를 ON 하면 보드의 GND와 배터리의 GND가 연결되어 보드가 구동되도록 연결됩니다.</p>
+<p class="image-container"><img alt="image4" src="img\\2a0e6e44b928c8f9.png"></p>
 <p>9V 배터리를 꽂고 스위치를 올려서 보드가 동작하는지 테스트 해볼 수 있습니다. 간혹 배터리 홀더에 접촉 불량으로 동작하지 않는 경우도 있으니 정상적으로 아두이노에 전원이 들어오는지 확인 해보세요.</p>
 
 
@@ -61,10 +65,14 @@
 <p>점퍼선의 색을 보고 그림과 동일하게 회로를 만들어 주세요.</p>
 <p>M/F 점퍼와이어를 두줄 나눠서 모터드라이버에 연결합니다.반대쪽은 그림과 같이 브레드보드에 연결합니다.</p>
 <p>모터드라이버 역시 배터리를 꽂고 LED가 들어오는지 스위치 테스트를 해볼 수 있습니다.</p>
+<p class="image-container"><img alt="image5" src="img\\6df747e57c319fd7.png"></p>
 <p>모터A(왼쪽모터)를 제어하기 위해 M/F 점퍼와이어를 두줄 나눠서 모터드라이버의 모터A 제어핀을 아두이노의 3번핀과 11번핀에 연결합니다.</p>
 <p>그림과 같이 핀의 순서를 맞춰주셔야 이후에 예제코드를 업로드했을때 모터 방향이 일치합니다.</p>
+<p class="image-container"><img alt="image6" src="img\\4854ef9afa02661a.png"></p>
 <p>동일한 요령으로 모터드라이버의 모터B(오른쪽모터)제어핀을 아두이노의 5번과 6번핀에 각각 연결합니다.</p>
+<p class="image-container"><img alt="image7" src="img\\421d26b65b77dfed.png"></p>
 <p>왼쪽 모터의 제어선을 모터드라이버의 모터A에 해당하는 터미널에 연결합니다.</p>
+<p class="image-container"><img alt="image8" src="img\\b601c78a9bb4900b.png"></p>
 <ol type="1">
 <li>스크류드라이버로 모터드라이버의 연결 볼트를 살짝 풀어줍니다.</li>
 <li>피복이 벗겨져 있지 않다면 니퍼나 리드커터를 이용해 피복을 벗긴 뒤 모터드라이버의 연결 볼터 아래쪽으로 넣어줍니다.</li>
@@ -73,14 +81,8 @@
 <p><strong>피복을 너무 벗기면 합선이 생길 수 있으니 적당한 길이로 피복을 벗깁니다.</strong></p>
 <p>그림과 같은 색상 순서로 연결해야 예제코드 업로드시 모터 방향이 일치합니다.</p>
 <p>동일한 요령으로 오른쪽 모터 역시 모터B터미널에 연결해줍니다.</p>
-<p>센서 및 모듈에 전원을 공급하기 용이하도록 M/M 점퍼와이어 두 줄로 아두이노 보드의 5V와 GND 핀을 그림과같이 브레드보드에 연결합니다.</p>
+<p class="image-container"><img alt="image9" src="img\\745cff0b368ce6fb.png"></p>
 <p>여기까지 배선하시면 기본적인 구동이 가능한 상태가 됩니다.</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="LED 연결하기" duration="3">
-        <p>LED 불 빛이 동작하도록 붉은 색과 초록 색 LED를 저항과 함께 회로에 연결해 줍니다.</p>
 
 
       </google-codelab-step>
@@ -93,12 +95,6 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Buzzer 연결하기" duration="3">
-        <p>장애물을 발견했을 때 소리를 낼 수 있도록 Buzzer를 연결해 줍니다.</p>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="정리" duration="3">
         <p>자동차 위에 여러가지 회로를 구성해 보았습니다. 복잡한 구성이지만 각 부품별로 차근차근 회로를 만들면 이해하기 쉽습니다.</p>
 <p>우리가 사용하는 컴퓨터도 엄청나게 복잡하지만, 아주 간단한 반도체 하나를 만들고 그것을 여러개 만들어서 모은것입니다.</p>
@@ -106,12 +102,13 @@
 <ul>
 <li>전원을 공급하는 선을 스위치와 함께 연결해 주었습니다.</li>
 <li>모터 드라이버와 모터를 연결하고 모터드라이버에 신호를 보낼 수 있도록 아두이노와 연결해 주었습니다.</li>
-<li>LED 회로를 연결해 주었습니다.</li>
 <li>초음파 센서를 설치하고 회로를 연결해 주었습니다.</li>
-<li>Buzzer 회로를 연결해 주었습니다.</li>
 </ul>
 <h2 is-upgraded>참고자료</h2>
-<p><a href="https://www.devicemart.co.kr/goods/download?id=1385495&rank=1" target="_blank">블루RC카 사용설명서</a><a href="https://www.devicemart.co.kr/goods/download?id=1385495&rank=2" target="_blank">아두이노 스마트 RC카 블록코딩 메뉴얼</a></p>
+<ul>
+<li><a href="https://www.devicemart.co.kr/goods/download?id=1385495&rank=1" target="_blank">블루RC카 사용설명서</a></li>
+<li><a href="https://www.devicemart.co.kr/goods/download?id=1385495&rank=2" target="_blank">아두이노 스마트 RC카 블록코딩 메뉴얼</a></li>
+</ul>
 
 
       </google-codelab-step>

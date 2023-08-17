@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Buzzer로 엘리제를 위하여 노래 재생해보기</title>
+  <title>Buzzer로 멜로디 재생해보기</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
@@ -23,7 +23,7 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="buzzer-quiz"
-                  title="Buzzer로 엘리제를 위하여 노래 재생해보기"
+                  title="Buzzer로 멜로디 재생해보기"
                   environment="web"
                   feedback-link="https://github.com/msaltnet/coding-camp">
     
@@ -42,7 +42,7 @@
 <li>Buzzer로 소리를 내는 프로그램 작성 및 실습</li>
 </ol>
 <h2 is-upgraded>도전</h2>
-<p>Buzzer로 엘리제를 위하여를 재생해보자</p>
+<p>Buzzer로 멜로디를 재생해보자</p>
 
 
       </google-codelab-step>
@@ -60,7 +60,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Buzzer로 도레미파솔라시도 소리내기" duration="10">
+      <google-codelab-step label="도레미파솔라시도 소리내기" duration="10">
         <p>Buzzer 소자는 아두이노와 바로 연결해서 사용할 수 있습니다. Buzzer의 +극을 아두이노 핀에 연결하고 -극을 GND에 연결해줍니다.</p>
 <p>//회로도</p>
 <p>음계마다 어떤 주파수를 갖는지는 표를 보고 확인 할 수 있습니다. 4옥타브를 기준으로 프로그램을 작성해 보겠습니다.</p>
@@ -104,24 +104,24 @@ void loop() {
 
       </google-codelab-step>
     
-      <google-codelab-step label="Buzzer로 짧은 멜로디 재생하기" duration="15">
+      <google-codelab-step label="짧은 멜로디 재생하기" duration="15">
         <p>도레미파솔라시도에 대한 소리를 발생시켜봤습니다. 모두 0.5초 동안 소리가 나게했는데, 이번에는 소리가 나는 시간까지 정해서 멜로디를 재생해 보겠습니다.</p>
 <p>음 하나의 주파수와 길이를 하나의 정보로 전달하기 위해서 <code>struct sound</code>라는 구조체를 정의했습니다.</p>
 <p>연주할 음을 sound_list라는 배열에 넣어서 차례대로 연주하도록 하였습니다.</p>
 <p>코드를 천천히 이해해보세요.</p>
-<pre><code language="language-c" class="language-c">#define NOTE_C4  262
-#define NOTE_CS4 277
-#define NOTE_D4  294
-#define NOTE_DS4 311
-#define NOTE_E4  330
-#define NOTE_F4  349
-#define NOTE_FS4 370
-#define NOTE_G4  392
-#define NOTE_GS4 415
-#define NOTE_A4  440
-#define NOTE_AS4 466
-#define NOTE_B4  494
-#define NOTE_C5  523
+<pre><code language="language-c" class="language-c">#define NOTE_C4  262 //4옥타브 도에 해당하는 주파수
+#define NOTE_CS4 277 //4옥타브 도샾에 해당하는 주파수 
+#define NOTE_D4  294 //4옥타브 레에 해당하는 주파수
+#define NOTE_DS4 311 //4옥타브 레샵에 해당하는 주파수
+#define NOTE_E4  330 //4옥타브 미에 해당하는 주파수
+#define NOTE_F4  349 //4옥타브 파에 해당하는 주파수
+#define NOTE_FS4 370 //4옥타브 파샵에 해당하는 주파수
+#define NOTE_G4  392 //4옥타브 솔에 해당하는 주파수
+#define NOTE_GS4 415 //4옥타브 솔샵에 해당하는 주파수
+#define NOTE_A4  440 //4옥타브 라에 해당하는 주파수
+#define NOTE_AS4 466 //4옥타브 라샵에 해당하는 주파수
+#define NOTE_B4  494 //4옥타브 시에 해당하는 주파수
+#define NOTE_C5  523 //5옥타브 도에 해당하는 주파수
 #define NOTE_CS5 554
 #define NOTE_D5  587
 #define NOTE_DS5 622
@@ -145,22 +145,6 @@ void loop() {
 #define NOTE_A6  1760
 #define NOTE_AS6 1865
 #define NOTE_B6  1976
-#define NOTE_C7  2093
-#define NOTE_CS7 2217
-#define NOTE_D7  2349
-#define NOTE_DS7 2489
-#define NOTE_E7  2637
-#define NOTE_F7  2794
-#define NOTE_FS7 2960
-#define NOTE_G7  3136
-#define NOTE_GS7 3322
-#define NOTE_A7  3520
-#define NOTE_AS7 3729
-#define NOTE_B7  3951
-#define NOTE_C8  4186
-#define NOTE_CS8 4435
-#define NOTE_D8  4699
-#define NOTE_DS8 4978
 
 #define MUTE 0 //무음 처리를 위해서 추가
 
@@ -209,139 +193,7 @@ void loop() {
 
       </google-codelab-step>
     
-      <google-codelab-step label="엘리제를 위하여 재생하기 - 퀴즈" duration="10">
-        <p>이제 앞에서 배운 내용을 이용해서 엘리제를 위하여를 재생하는 프로그램을 만들어 보세요.</p>
-<p>악보와 주파수는 아래 내용을 참고하세요.</p>
-<p>https://3piano.net/shop_view/?idx=219 // 악보</p>
-<p>// 음계 주파수 이미지 https://m.blog.naver.com/geniusus/221549772862</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="엘리제를 위하여 재생하기 - 답안" duration="5">
-        <pre><code language="language-c" class="language-c">#define NOTE_B0  31
-#define NOTE_C1  33
-#define NOTE_CS1 35
-#define NOTE_D1  37
-#define NOTE_DS1 39
-#define NOTE_E1  41
-#define NOTE_F1  44
-#define NOTE_FS1 46
-#define NOTE_G1  49
-#define NOTE_GS1 52
-#define NOTE_A1  55
-#define NOTE_AS1 58
-#define NOTE_B1  62
-#define NOTE_C2  65
-#define NOTE_CS2 69
-#define NOTE_D2  73
-#define NOTE_DS2 78
-#define NOTE_E2  82
-#define NOTE_F2  87
-#define NOTE_FS2 93
-#define NOTE_G2  98
-#define NOTE_GS2 104
-#define NOTE_A2  110
-#define NOTE_AS2 117
-#define NOTE_B2  123
-#define NOTE_C3  131
-#define NOTE_CS3 139
-#define NOTE_D3  147
-#define NOTE_DS3 156
-#define NOTE_E3  165
-#define NOTE_F3  175
-#define NOTE_FS3 185
-#define NOTE_G3  196
-#define NOTE_GS3 208
-#define NOTE_A3  220
-#define NOTE_AS3 233
-#define NOTE_B3  247
-#define NOTE_C4  262
-#define NOTE_CS4 277
-#define NOTE_D4  294
-#define NOTE_DS4 311
-#define NOTE_E4  330
-#define NOTE_F4  349
-#define NOTE_FS4 370
-#define NOTE_G4  392
-#define NOTE_GS4 415
-#define NOTE_A4  440
-#define NOTE_AS4 466
-#define NOTE_B4  494
-#define NOTE_C5  523
-#define NOTE_CS5 554
-#define NOTE_D5  587
-#define NOTE_DS5 622
-#define NOTE_E5  659
-#define NOTE_F5  698
-#define NOTE_FS5 740
-#define NOTE_G5  784
-#define NOTE_GS5 831
-#define NOTE_A5  880
-#define NOTE_AS5 932
-#define NOTE_B5  988
-#define NOTE_C6  1047
-#define NOTE_CS6 1109
-#define NOTE_D6  1175
-#define NOTE_DS6 1245
-#define NOTE_E6  1319
-#define NOTE_F6  1397
-#define NOTE_FS6 1480
-#define NOTE_G6  1568
-#define NOTE_GS6 1661
-#define NOTE_A6  1760
-#define NOTE_AS6 1865
-#define NOTE_B6  1976
-#define NOTE_C7  2093
-#define NOTE_CS7 2217
-#define NOTE_D7  2349
-#define NOTE_DS7 2489
-#define NOTE_E7  2637
-#define NOTE_F7  2794
-#define NOTE_FS7 2960
-#define NOTE_G7  3136
-#define NOTE_GS7 3322
-#define NOTE_A7  3520
-#define NOTE_AS7 3729
-#define NOTE_B7  3951
-#define NOTE_C8  4186
-#define NOTE_CS8 4435
-#define NOTE_D8  4699
-#define NOTE_DS8 4978
-
-struct sound {
-  int tone;
-  int duration_ms;
-};
-
-#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
-struct sound soundList[] = {
-  {NOTE_G4, DURTION_QUARTER},
-  {NOTE_A4, DURTION_QUARTER + DURTION_EIGHTH},
-  {MUTE,    DURTION_QUARTER},
-  {NOTE_B4, DURTION_QUARTER + DURTION_EIGHTH},
-  {NOTE_E5, DURTION_QUARTER},
-  {NOTE_D5, DURTION_HALF + DURTION_QUARTER}
-};
-int soundListCount = 6;
-
-void setup() {
-}
-
-void loop() {
-  for(int i = 0; i &lt; soundListCount; i++) //soundListCount 만큼 반복
-  {
-    tone(BUZZER_PIN_NUM, soundList[i].tone, soundList[i].duration_ms); //soundList의 i번째 주파수를 재생
-  }
-  noTone(BUZZER_PIN_NUM); //재생중지
-  delay(1000); //1초 대기
-}
-</code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="정리" duration="1">
+      <google-codelab-step label="정리" duration="2">
         <p>소리가 주파수를 갖고 있는 음파라는 사실을 알게되었습니다.</p>
 <p>아두이노와 Buzzer를 이용해서 간단한 소리와 조금 복잡한 멜로디를 재생해 보았습니다.</p>
 <p>버튼을 이용해서 간단하 피아노를 만들어 보거나 독특한 벨을 만들 수 있을 것 같아요.</p>
@@ -351,7 +203,10 @@ void loop() {
 <li>반도체를 통해서 소리를 마음대로 낼 수 있는 프로그램을 만들 수 있다.</li>
 </ul>
 <h2 is-upgraded>참고</h2>
-<p><a href="https://www.arduino.cc/reference/ko/language/functions/advanced-io/tone/" target="_blank">tone()</a><a href="https://www.arduino.cc/reference/ko/language/functions/advanced-io/notone/" target="_blank">noTone()</a></p>
+<ul>
+<li><a href="https://www.arduino.cc/reference/ko/language/functions/advanced-io/tone/" target="_blank">tone()</a></li>
+<li><a href="https://www.arduino.cc/reference/ko/language/functions/advanced-io/notone/" target="_blank">noTone()</a></li>
+</ul>
 
 
       </google-codelab-step>

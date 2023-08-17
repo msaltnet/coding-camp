@@ -1,6 +1,6 @@
 author: Jeong Seongmoon
 summary: 장애물을 피해 주행하는 자동차 프로그래밍
-id: car-programming
+id: smart-car
 categories: codelab
 environments: Web
 status: Published

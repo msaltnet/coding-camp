@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-08-17T23:50:18+09:00",
+  "id": "smart-car",
+  "duration": 33,
+  "title": "장애물을 피해 주행하는 자동차 프로그래밍",
+  "summary": "장애물을 피해 주행하는 자동차 프로그래밍",
+  "source": ".\\_article\\95_smartcar\\95_smartcar.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/msaltnet/coding-camp",
+  "url": "smart-car"
+}

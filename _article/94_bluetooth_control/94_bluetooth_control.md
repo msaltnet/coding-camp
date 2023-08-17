@@ -54,7 +54,7 @@ void loop()
 //
 
 ## 블루투스 모듈과 스마트폰 연결
-Duration: 0:03:00
+Duration: 0:05:00
 
 이번에는 블루투스 모듈과 스마트폰을 연결해 보겠습니다. 스마트폰의 블루투스 기능을 활용해서 아두이노의 블루투스 모듈과 시리얼 통신을 하는 것입니다.
 
@@ -64,24 +64,24 @@ Duration: 0:03:00
 
 블루투스 센서 및 모듈에 전원을 공급하기 용이하도록 M/M 점퍼와이어 두 줄로 아두이노 보드의 5V와 GND 핀을 그림과같이 브레드보드에 연결합니다.
 
-![image10](./img/10.센서및모듈용전원연결.png)
+![image10](./img/10.png)
 
 
 사진과 같은 위치에 블루투스를 삽입합니다. 배선이 완료되지 않은 사진이므로 블루투스의 위치만 참고해주세요.
 
-![image position](./img/wp_9276334391530598353661.jpg)
+![image position](./img/99.jpg)
 
 블루투스 모듈의 VCC와 GND를 아두이노와 연결해 줍니다. VCC는 아두이노 5V에 연결해주세요.
 
-![image11](./img/11.블루투스장착.png)
+![image11](./img/11.png)
 
 블루투스 모듈의 Rx, Tx 핀은 각각 0번, 1번에 연결해 줍니다.
 
-![image11](./img/12.블루투스연결.png)
+![image11](./img/13.png)
+
+![image11](./img/14.png)
 
 블루투스 모듈이 꼽힌 상태로는 아두이노 IDE에서 업로드가 제대로 되지 않을 수 있습니다. **반드시 모듈을 빼고 업로드를 진행하세요.**
-
-![image11](./img/13.블루투스제거.png)
 
 이제 스마트폰에 블루투스 시리얼 통신을 사용할 수 있는 앱을 설치해야 하는데, 여기서는 [Arduino Bluetooth Control](https://play.google.com/store/apps/details?id=com.broxcode.arduinobluetoothfree&hl=ko&gl=US)를 기준으로 설명을 하겠습니다.
 
