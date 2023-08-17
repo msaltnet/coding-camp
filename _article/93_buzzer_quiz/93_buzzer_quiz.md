@@ -1,12 +1,12 @@
 author: Jeong Seongmoon
-summary: Buzzer로 엘리제를 위하여 노래 재생해보기
+summary: Buzzer로 멜로디 재생해보기
 id: buzzer-quiz
 categories: codelab
 environments: Web
 status: Published
 feedback link: https://github.com/msaltnet/coding-camp
 
-# Buzzer로 엘리제를 위하여 노래 재생해보기
+# Buzzer로 멜로디 재생해보기
 
 ## 시작하기
 Duration: 0:01:00
@@ -24,7 +24,7 @@ Buzzer에 대해서 알아보고 아두이노를 통해서 Buzzer로 소리를 �
 1. Buzzer로 소리를 내는 프로그램 작성 및 실습
 
 ### 도전
-Buzzer로 엘리제를 위하여를 재생해보자
+Buzzer로 멜로디를 재생해보자
 
 ## Buzzer란
 Duration: 0:02:00
@@ -47,7 +47,7 @@ https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%E
 
 소리는 주파수에 따라서 음의 높낮이가 다르며, Buzzer에 흐르는 전류를 주파수를 변경하면 소리를 변경할 수 있습니다. Buzzer에 입력되는 전류의 주파수가 높을 수록 고음이 발생합니다.
 
-## Buzzer로 도레미파솔라시도 소리내기
+## 도레미파솔라시도 소리내기
 Duration: 0:10:00
 
 Buzzer 소자는 아두이노와 바로 연결해서 사용할 수 있습니다. Buzzer의 +극을 아두이노 핀에 연결하고 -극을 GND에 연결해줍니다.
@@ -96,7 +96,7 @@ void loop() {
 }
 ```
 
-## Buzzer로 짧은 멜로디 재생하기
+## 짧은 멜로디 재생하기
 Duration: 0:15:00
 
 도레미파솔라시도에 대한 소리를 발생시켜봤습니다.
@@ -109,19 +109,19 @@ Duration: 0:15:00
 코드를 천천히 이해해보세요.
 
 ```c
-#define NOTE_C4  262
-#define NOTE_CS4 277
-#define NOTE_D4  294
-#define NOTE_DS4 311
-#define NOTE_E4  330
-#define NOTE_F4  349
-#define NOTE_FS4 370
-#define NOTE_G4  392
-#define NOTE_GS4 415
-#define NOTE_A4  440
-#define NOTE_AS4 466
-#define NOTE_B4  494
-#define NOTE_C5  523
+#define NOTE_C4  262 //4옥타브 도에 해당하는 주파수
+#define NOTE_CS4 277 //4옥타브 도샾에 해당하는 주파수 
+#define NOTE_D4  294 //4옥타브 레에 해당하는 주파수
+#define NOTE_DS4 311 //4옥타브 레샵에 해당하는 주파수
+#define NOTE_E4  330 //4옥타브 미에 해당하는 주파수
+#define NOTE_F4  349 //4옥타브 파에 해당하는 주파수
+#define NOTE_FS4 370 //4옥타브 파샵에 해당하는 주파수
+#define NOTE_G4  392 //4옥타브 솔에 해당하는 주파수
+#define NOTE_GS4 415 //4옥타브 솔샵에 해당하는 주파수
+#define NOTE_A4  440 //4옥타브 라에 해당하는 주파수
+#define NOTE_AS4 466 //4옥타브 라샵에 해당하는 주파수
+#define NOTE_B4  494 //4옥타브 시에 해당하는 주파수
+#define NOTE_C5  523 //5옥타브 도에 해당하는 주파수
 #define NOTE_CS5 554
 #define NOTE_D5  587
 #define NOTE_DS5 622
@@ -145,22 +145,6 @@ Duration: 0:15:00
 #define NOTE_A6  1760
 #define NOTE_AS6 1865
 #define NOTE_B6  1976
-#define NOTE_C7  2093
-#define NOTE_CS7 2217
-#define NOTE_D7  2349
-#define NOTE_DS7 2489
-#define NOTE_E7  2637
-#define NOTE_F7  2794
-#define NOTE_FS7 2960
-#define NOTE_G7  3136
-#define NOTE_GS7 3322
-#define NOTE_A7  3520
-#define NOTE_AS7 3729
-#define NOTE_B7  3951
-#define NOTE_C8  4186
-#define NOTE_CS8 4435
-#define NOTE_D8  4699
-#define NOTE_DS8 4978
 
 #define MUTE 0 //무음 처리를 위해서 추가
 
@@ -206,145 +190,8 @@ void loop() {
 }
 ```
 
-## 엘리제를 위하여 재생하기 - 퀴즈
-Duration: 0:10:00
-
-이제 앞에서 배운 내용을 이용해서 엘리제를 위하여를 재생하는 프로그램을 만들어 보세요.
-
-악보와 주파수는 아래 내용을 참고하세요.
-
-https://3piano.net/shop_view/?idx=219
-// 악보
-
-// 음계 주파수 이미지
-https://m.blog.naver.com/geniusus/221549772862
-
-## 엘리제를 위하여 재생하기 - 답안
-Duration: 0:05:00
-
-
-```c
-#define NOTE_B0  31
-#define NOTE_C1  33
-#define NOTE_CS1 35
-#define NOTE_D1  37
-#define NOTE_DS1 39
-#define NOTE_E1  41
-#define NOTE_F1  44
-#define NOTE_FS1 46
-#define NOTE_G1  49
-#define NOTE_GS1 52
-#define NOTE_A1  55
-#define NOTE_AS1 58
-#define NOTE_B1  62
-#define NOTE_C2  65
-#define NOTE_CS2 69
-#define NOTE_D2  73
-#define NOTE_DS2 78
-#define NOTE_E2  82
-#define NOTE_F2  87
-#define NOTE_FS2 93
-#define NOTE_G2  98
-#define NOTE_GS2 104
-#define NOTE_A2  110
-#define NOTE_AS2 117
-#define NOTE_B2  123
-#define NOTE_C3  131
-#define NOTE_CS3 139
-#define NOTE_D3  147
-#define NOTE_DS3 156
-#define NOTE_E3  165
-#define NOTE_F3  175
-#define NOTE_FS3 185
-#define NOTE_G3  196
-#define NOTE_GS3 208
-#define NOTE_A3  220
-#define NOTE_AS3 233
-#define NOTE_B3  247
-#define NOTE_C4  262
-#define NOTE_CS4 277
-#define NOTE_D4  294
-#define NOTE_DS4 311
-#define NOTE_E4  330
-#define NOTE_F4  349
-#define NOTE_FS4 370
-#define NOTE_G4  392
-#define NOTE_GS4 415
-#define NOTE_A4  440
-#define NOTE_AS4 466
-#define NOTE_B4  494
-#define NOTE_C5  523
-#define NOTE_CS5 554
-#define NOTE_D5  587
-#define NOTE_DS5 622
-#define NOTE_E5  659
-#define NOTE_F5  698
-#define NOTE_FS5 740
-#define NOTE_G5  784
-#define NOTE_GS5 831
-#define NOTE_A5  880
-#define NOTE_AS5 932
-#define NOTE_B5  988
-#define NOTE_C6  1047
-#define NOTE_CS6 1109
-#define NOTE_D6  1175
-#define NOTE_DS6 1245
-#define NOTE_E6  1319
-#define NOTE_F6  1397
-#define NOTE_FS6 1480
-#define NOTE_G6  1568
-#define NOTE_GS6 1661
-#define NOTE_A6  1760
-#define NOTE_AS6 1865
-#define NOTE_B6  1976
-#define NOTE_C7  2093
-#define NOTE_CS7 2217
-#define NOTE_D7  2349
-#define NOTE_DS7 2489
-#define NOTE_E7  2637
-#define NOTE_F7  2794
-#define NOTE_FS7 2960
-#define NOTE_G7  3136
-#define NOTE_GS7 3322
-#define NOTE_A7  3520
-#define NOTE_AS7 3729
-#define NOTE_B7  3951
-#define NOTE_C8  4186
-#define NOTE_CS8 4435
-#define NOTE_D8  4699
-#define NOTE_DS8 4978
-
-struct sound {
-  int tone;
-  int duration_ms;
-};
-
-#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
-struct sound soundList[] = {
-  {NOTE_G4, DURTION_QUARTER},
-  {NOTE_A4, DURTION_QUARTER + DURTION_EIGHTH},
-  {MUTE,    DURTION_QUARTER},
-  {NOTE_B4, DURTION_QUARTER + DURTION_EIGHTH},
-  {NOTE_E5, DURTION_QUARTER},
-  {NOTE_D5, DURTION_HALF + DURTION_QUARTER}
-};
-int soundListCount = 6;
-
-void setup() {
-}
-
-void loop() {
-  for(int i = 0; i < soundListCount; i++) //soundListCount 만큼 반복
-  {
-    tone(BUZZER_PIN_NUM, soundList[i].tone, soundList[i].duration_ms); //soundList의 i번째 주파수를 재생
-  }
-  noTone(BUZZER_PIN_NUM); //재생중지
-  delay(1000); //1초 대기
-}
-```
-
 ## 정리
-Duration: 0:01:00
+Duration: 0:02:00
 
 소리가 주파수를 갖고 있는 음파라는 사실을 알게되었습니다.
 
@@ -357,5 +204,5 @@ Duration: 0:01:00
 - 반도체를 통해서 소리를 마음대로 낼 수 있는 프로그램을 만들 수 있다.
 
 ### 참고
-[tone()](https://www.arduino.cc/reference/ko/language/functions/advanced-io/tone/)
-[noTone()](https://www.arduino.cc/reference/ko/language/functions/advanced-io/notone/)
+- [tone()](https://www.arduino.cc/reference/ko/language/functions/advanced-io/tone/)
+- [noTone()](https://www.arduino.cc/reference/ko/language/functions/advanced-io/notone/)

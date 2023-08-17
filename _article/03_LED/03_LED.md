@@ -30,9 +30,9 @@ Duration: 0:02:00
 
 **전기가 통하면 빛이 나는 반도체 소자!**
 
-> A light-emitting diode (LED) is a semiconductor device that emits light when an electric current flows through it. When current passes through an LED, the electrons recombine with holes emitting light in the process.
+"A light-emitting diode (LED) is a semiconductor device that emits light when an electric current flows through it. When current passes through an LED, the electrons recombine with holes emitting light in the process."
 
-> 발광 다이오드(LED)는 전류가 흐르면 빛을 발하는 반도체 소자입니다. 전류가 LED를 통과하면 전자가 정공과 재결합하여 빛을 발산합니다.
+"발광 다이오드(LED)는 전류가 흐르면 빛을 발하는 반도체 소자입니다. 전류가 LED를 통과하면 전자가 정공과 재결합하여 빛을 발산합니다."
 
 [Light Emitting Diode (LED)](https://byjus.com/physics/light-emitting-diode/#:~:text=Asked%20Questions%20%E2%80%93%20FAQs-,What%20is%20LED%3F,emitting%20light%20in%20the%20process)
 
@@ -53,8 +53,8 @@ Duration: 0:05:00
 
 저항의 전기가 흐르는 것을 방해하는 정도를 뜻하지만, 전류의 양을 조절하기 위한 저항소자도 보통 저항이라고 부릅니다.
 
-> 전기저항(電氣抵抗, electrical resistance)은 도체에서 전류의 흐름을 방해하는 정도를 나타내는 물리량이다. 국제단위계 단위는 옴이고 
-Ω\Omega 로 나타낸다. 전기 회로 이론에서는 간단히 줄여 저항이라고 부른다. - [전기저항 위키백과](https://ko.wikipedia.org/wiki/%EC%A0%84%EA%B8%B0%EC%A0%80%ED%95%AD)
+"전기저항(電氣抵抗, electrical resistance)은 도체에서 전류의 흐름을 방해하는 정도를 나타내는 물리량이다. 국제단위계 단위는 옴이고 
+Ω\Omega 로 나타낸다. 전기 회로 이론에서는 간단히 줄여 저항이라고 부른다. - [전기저항 위키백과](https://ko.wikipedia.org/wiki/%EC%A0%84%EA%B8%B0%EC%A0%80%ED%95%AD)"
 
 저항소자는 다양한 종류가 있지만 우리가 사용하는 것은 아래와 같이 생긴 띠 저항이며, 색을 통해서 저항의 크기를 확인 할 수 있습니다.
 

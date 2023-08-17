@@ -9,7 +9,7 @@ feedback link: https://github.com/msaltnet/coding-camp
 # 자동차 본체 조립
 
 ## 시작하기
-Duration: 0:01:00
+Duration: 0:02:00
 
 자동차의 본체를 조립해보겠습니다. 부품이 모두있는지 확인하고, 차근차근 조립해봅시다.
 
@@ -98,5 +98,5 @@ Duration: 0:01:00
 // 완성 자동차
 
 ### 참고자료
-[블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
-[아두이노 스마트 RC카 블록코딩 메뉴얼](https://www.devicemart.co.kr/goods/download?id=1385495&rank=2)
+- [블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
+- [아두이노 스마트 RC카 블록코딩 메뉴얼](https://www.devicemart.co.kr/goods/download?id=1385495&rank=2)

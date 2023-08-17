@@ -83,11 +83,6 @@ M/F 점퍼와이어를 두줄 나눠서 모터드라이버에 연결합니다.�
 
 여기까지 배선하시면 기본적인 구동이 가능한 상태가 됩니다.
 
-## LED 연결하기
-Duration: 0:03:00
-
-LED 불 빛이 동작하도록 붉은 색과 초록 색 LED를 저항과 함께 회로에 연결해 줍니다.
-
 ## 초음파센서 연결하기
 Duration: 0:03:00
 
@@ -96,11 +91,6 @@ Duration: 0:03:00
 우선 초음파 센서를 아두이노와 연결합니다.
 
 배선을 완료한 초음파센서를 아크릴 판에 부착합니다.
-
-## Buzzer 연결하기
-Duration: 0:03:00
-
-장애물을 발견했을 때 소리를 낼 수 있도록 Buzzer를 연결해 줍니다.
 
 ## 정리
 Duration: 0:03:00
@@ -113,10 +103,8 @@ Duration: 0:03:00
 
 - 전원을 공급하는 선을 스위치와 함께 연결해 주었습니다.
 - 모터 드라이버와 모터를 연결하고 모터드라이버에 신호를 보낼 수 있도록 아두이노와 연결해 주었습니다.
-- LED 회로를 연결해 주었습니다.
 - 초음파 센서를 설치하고 회로를 연결해 주었습니다.
-- Buzzer 회로를 연결해 주었습니다.
 
 ### 참고자료
-[블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
-[아두이노 스마트 RC카 블록코딩 메뉴얼](https://www.devicemart.co.kr/goods/download?id=1385495&rank=2)
+- [블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
+- [아두이노 스마트 RC카 블록코딩 메뉴얼](https://www.devicemart.co.kr/goods/download?id=1385495&rank=2)
