@@ -18,6 +18,8 @@ Duration: 0:01:00
 1. 아두이노와 연결 가능한 PC와 IDE
 1. 초음파 센서
 
+![sensor](./img/sensor.jpg)
+
 ### 배우게 될 것
 1. 초음파란 무엇인가
 1. 초음파를 이용한 거리 측정 방법
@@ -143,11 +145,11 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 
 업로드를 진행합니다. PC모니터를 통해서 값을 확인할수 있도록 `시리얼모니터` 버튼을 눌러줍니다.
 
-//이미지
+![serial monitor](./img/arduino-ultrasound.PNG)
 
 아래 사진처럼 손바닥과 초음파센서의 거리를 측정해보며, PC에 측정된 거리가 잘 나오는지 확인합니다.
 
-// 이미지
+![serial monitor](./img/arduino-ultrasound-serial.PNG)
 
 ## 정리
 Duration: 0:01:00
