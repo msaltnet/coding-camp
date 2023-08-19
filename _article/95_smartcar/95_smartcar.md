@@ -278,7 +278,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 void waitCar() {
   driveCarForward(MOTOR_SPEED_0); //자동차를 정지합니다.
 
-  setLed(true, false); // 빨간색 LED를 켭니다.
+  setLed(true, true); // 빨간색 LED를 켭니다.
 }
 
 void setLed(bool on, bool isRed) {
@@ -389,7 +389,7 @@ void makeBeep() {
 코드 내용은 천천히 혼자 스스로 이해해보세요.
 
 ```c
-#define BUZZER_PIN_NUM 2//아두이노와 연결된 Buzzer 핀 번호
+#define BUZZER_PIN_NUM 7//아두이노와 연결된 Buzzer 핀 번호
 #define BUZZER_FREQUENCY 784 // 5옥타브 솔 주파수
 #define BUZZER_DURATION 100 // 삐-소리 나는 시간
 
@@ -452,7 +452,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 void waitCar() {
   driveCarForward(MOTOR_SPEED_0); //자동차를 정지합니다.
 
-  setLed(true, false); // 빨간색 LED를 켭니다.
+  setLed(true, true); // 빨간색 LED를 켭니다.
 
   makeBeep(); // 삐- 소리를 짧게 재생합니다.
 }
