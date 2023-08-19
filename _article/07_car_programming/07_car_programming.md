@@ -102,7 +102,7 @@ Duration: 0:05:00
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -203,7 +203,7 @@ Duration: 0:05:00
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다

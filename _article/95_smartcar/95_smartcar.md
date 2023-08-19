@@ -63,7 +63,7 @@ Duration: 0:05:00
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -225,7 +225,7 @@ void setLed(bool on, bool isRed) {
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -399,7 +399,7 @@ void makeBeep() {
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -593,7 +593,7 @@ void waitCar() {
     waitingCount = 1; // 기다린 횟수를 1로 만듭니다.
     isMoving = false;
   } else {
-    if (waitingCount < 5) {
+    if (waitingCount < WAINTING_COUNT) {
       waitingCount = waitingCount + 1;
     } else {
       turnRight(); //자동차를 오른쪽으로 회전합니다.
@@ -614,7 +614,8 @@ void waitCar() {
 #define BUZZER_PIN_NUM 7//아두이노와 연결된 Buzzer 핀 번호
 #define BUZZER_FREQUENCY 784 // 5옥타브 솔 주파수
 #define BUZZER_DURATION 100 // 삐-소리 나는 시간
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
+#define WAINTING_COUNT 5
 
 #define LED_GREEN_PIN_NUM 4 // 녹색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 #define LED_RED_PIN_NUM 2 // 빨간색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
@@ -695,7 +696,7 @@ void waitCar() {
     waitingCount = 1; // 기다린 횟수를 1로 만듭니다.
     isMoving = false;
   } else {
-    if (waitingCount < 10) {
+    if (waitingCount < WAINTING_COUNT) {
       waitingCount = waitingCount + 1;
     } else {
       turnRight(); //자동차를 오른쪽으로 회전합니다.
