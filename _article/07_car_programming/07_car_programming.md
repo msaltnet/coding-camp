@@ -199,6 +199,8 @@ Duration: 0:05:00
 
 코드 내용은 천천히 혼자 스스로 이해해보세요.
 
+[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/car-programming.ino)
+
 ```c
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
