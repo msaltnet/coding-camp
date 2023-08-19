@@ -84,8 +84,8 @@
 <p>아래와 같이 회로를 구성해서 아두이노의 출력핀이 LED와 연결되게 합니다.</p>
 <p class="image-container"><img alt="디지털 핀 연결 회로도" src="img\\b386222251b0fc29.png"></p>
 <p>컴퓨터에 아두이노 IDE를 실행합니다. IDE는 프로그램을 작성하고, 작성된 프로그램을 기계 언어로 만들어서 아두이노에 저장(업로드) 할 수 있는 컴퓨터 프로그램입니다.</p>
-<p>//실행화면</p>
-<p>아래와 같이 입력한 다음 업로드 버튼을 눌러서 LED를 깜빡이게 해보겠습니다.</p>
+<p class="image-container"><img alt="arduino" src="img\\6072e827b3c683a6.PNG"></p>
+<p>아래와 같이 프로그램을 입력하거나 복사해서 붙여 넣어주세요.</p>
 <pre><code language="language-c" class="language-c">#define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 
 void setup() { //setup은 처음 한 번 실행되는 함수 입니다.
@@ -99,6 +99,8 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
   delay(1000);
 }
 </code></pre>
+<p>다음으로 왼쪽 위에 업로드 버튼을 눌러서 LED를 깜빡이게 해보세요.</p>
+<p class="image-container"><img alt="arduino led" src="img\\8a38009c83f4c328.PNG"></p>
 <p><code>void setup()</code>은 아두이노를 켰을때 한 번 실행되며, <code>void loop()</code>는 계속 반복 실행됩니다.</p>
 <p><code>pinMode</code>를 통해서 LED와 연결한 핀을 출력으로 설정합니다. LED를 켜기 위해서 전류를 흘려보내기 위함입니다.</p>
 <p><code>digitalWrite</code>를 통해서 연결된 핀의 출력을 설정합니다. <code>HIGH</code>로 설정하면 5V의 전압으로 핀에 전류가 흐르기 때문에 LED가 켜지고, <code>LOW</code>로 설정하면 꺼집니다.</p>

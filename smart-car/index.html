@@ -79,7 +79,7 @@
 <pre><code language="language-c" class="language-c">#define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -231,7 +231,7 @@ void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진�
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -284,7 +284,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 void waitCar() {
   driveCarForward(MOTOR_SPEED_0); //자동차를 정지합니다.
 
-  setLed(true, false); // 빨간색 LED를 켭니다.
+  setLed(true, true); // 빨간색 LED를 켭니다.
 }
 
 void setLed(bool on, bool isRed) {
@@ -387,7 +387,7 @@ void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진�
 </code></pre>
 <p>전체 프로그램을 다음과 같이 구성해서 업로드를 하고, 동작을 확인해 봅니다.</p>
 <p>코드 내용은 천천히 혼자 스스로 이해해보세요.</p>
-<pre><code language="language-c" class="language-c">#define BUZZER_PIN_NUM 2//아두이노와 연결된 Buzzer 핀 번호
+<pre><code language="language-c" class="language-c">#define BUZZER_PIN_NUM 7//아두이노와 연결된 Buzzer 핀 번호
 #define BUZZER_FREQUENCY 784 // 5옥타브 솔 주파수
 #define BUZZER_DURATION 100 // 삐-소리 나는 시간
 
@@ -397,7 +397,7 @@ void driveCarForward(unsigned int speed) //차를 전달받은 속도로 전진�
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)
 #define STOP_DISTANCE_CM 15 //자동차가 정지하는 기준 거리
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
 
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다
 #define MOTOR_A_b 11    //모터A의 -출력핀은 11번핀입니다
@@ -450,7 +450,7 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 void waitCar() {
   driveCarForward(MOTOR_SPEED_0); //자동차를 정지합니다.
 
-  setLed(true, false); // 빨간색 LED를 켭니다.
+  setLed(true, true); // 빨간색 LED를 켭니다.
 
   makeBeep(); // 삐- 소리를 짧게 재생합니다.
 }
@@ -583,7 +583,7 @@ int waitingCount = 0;
     waitingCount = 1; // 기다린 횟수를 1로 만듭니다.
     isMoving = false;
   } else {
-    if (waitingCount &lt; 5) {
+    if (waitingCount &lt; WAINTING_COUNT) {
       waitingCount = waitingCount + 1;
     } else {
       turnRight(); //자동차를 오른쪽으로 회전합니다.
@@ -600,7 +600,8 @@ int waitingCount = 0;
 <pre><code language="language-c" class="language-c">#define BUZZER_PIN_NUM 7//아두이노와 연결된 Buzzer 핀 번호
 #define BUZZER_FREQUENCY 784 // 5옥타브 솔 주파수
 #define BUZZER_DURATION 100 // 삐-소리 나는 시간
-#define CHECK_INTERVAL 300 //초음파 센서로 거리를 측정하는 시간 간격
+#define CHECK_INTERVAL 200 //초음파 센서로 거리를 측정하는 시간 간격
+#define WAINTING_COUNT 5
 
 #define LED_GREEN_PIN_NUM 4 // 녹색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 #define LED_RED_PIN_NUM 2 // 빨간색 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
@@ -681,7 +682,7 @@ void waitCar() {
     waitingCount = 1; // 기다린 횟수를 1로 만듭니다.
     isMoving = false;
   } else {
-    if (waitingCount &lt; 10) {
+    if (waitingCount &lt; WAINTING_COUNT) {
       waitingCount = waitingCount + 1;
     } else {
       turnRight(); //자동차를 오른쪽으로 회전합니다.
