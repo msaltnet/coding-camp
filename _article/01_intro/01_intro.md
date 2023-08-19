@@ -11,7 +11,7 @@ feedback link: https://github.com/msaltnet/coding-camp
 ## 강사소개
 Duration: 0:02:00
 
-![](./img/IMG_4789.JPEG)
+![msalt](./img/IMG_4789.JPEG)
 
 맛소금 - https://me.msalt.net
 
@@ -20,7 +20,9 @@ Duration: 0:05:00
 
 반도체와 프로그래밍에 대해서 배우고, 반도체와 전기 에너지를 사용해서 동작하는 똑똑한 자동차를 직접 만들어 봅니다.
 
-// 완성품 데모 영상
+![main](./img/main)
+
+[동작 동영상](https://www.youtube.com/watch?v=RbDGxCBN8vQ)
 
 ## 정리
 Duration: 0:03:00
