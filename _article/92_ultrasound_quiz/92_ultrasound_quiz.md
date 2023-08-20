@@ -127,6 +127,8 @@ Duration: 0:05:00
 
 동작이 잘 안하면 아두이노와 연결한 핀이 프로그램과 동일하게 연결되었는지 확인해 보세요.
 
+[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/ultrasound-quiz.ino)
+
 ```c
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
 #define ECHO_PIN_NUM 8 //ECHO 핀과 연결된 아두이노 핀 번호 (초음파 받는 핀)

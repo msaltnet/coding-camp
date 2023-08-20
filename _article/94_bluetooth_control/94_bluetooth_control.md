@@ -152,7 +152,7 @@ Duration: 0:03:00
 
 아래 프로그램을 아두이노에 업로드 하고, 아두이노 IDE 시리얼 모니터를 통해서 위의 문자를 전송해 보세요.
 
-[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/bt-control.ino)
+[소스코드 파일 - bt-control.ino](https://github.com/msaltnet/coding-camp/blob/main/code/bt-control.ino)
 
 ```c
 #define MOTOR_A_a 3     //모터A의 +출력핀은 3번핀입니다

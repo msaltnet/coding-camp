@@ -111,6 +111,8 @@ Duration: 0:15:00
 
 코드를 천천히 이해해보세요.
 
+[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/buzzer.ino)
+
 ```c
 #define NOTE_C4  262 //4옥타브 도에 해당하는 주파수
 #define NOTE_CS4 277 //4옥타브 도샾에 해당하는 주파수 

@@ -28,7 +28,7 @@ LED에 대해서 알아보고 아두이노를 통해서 LED를 깜빡이는 방�
 ## LED란
 Duration: 0:02:00
 
-**전기가 통하면 빛이 나는 반도체 소자!**
+**전류가 흐르면 빛이 나는 반도체 소자!**
 
 "A light-emitting diode (LED) is a semiconductor device that emits light when an electric current flows through it. When current passes through an LED, the electrons recombine with holes emitting light in the process."
 
@@ -90,6 +90,8 @@ Duration: 0:06:00
 ![arduino](./img/arduino-init.PNG)
 
 아래와 같이 프로그램을 입력하거나 복사해서 붙여 넣어주세요.
+
+[소스코드 파일 - led.ino](https://github.com/msaltnet/coding-camp/blob/main/code/led.ino)
 
 ```c
 #define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)

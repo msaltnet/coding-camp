@@ -74,6 +74,8 @@ Duration: 0:05:00
 
 중요한 것은 저항과 LED, 아두이노 핀 번호를 잘 입력해줘야 합니다.
 
+[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/led-quiz.ino)
+
 ```c
 #define LED_PIN_NUM 8 // LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)
 #define LED_PIN_NUM_2 9 // 두번째 LED의 긴다리 핀과 연결된 아두이노 핀 번호 (+핀)

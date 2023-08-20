@@ -199,7 +199,7 @@ Duration: 0:05:00
 
 코드 내용은 천천히 혼자 스스로 이해해보세요.
 
-[소스코드 파일](https://github.com/msaltnet/coding-camp/blob/main/code/car-programming.ino)
+[소스코드 파일 - car-programming.ino](https://github.com/msaltnet/coding-camp/blob/main/code/car-programming.ino)
 
 ```c
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
@@ -336,6 +336,8 @@ Duration: 0:03:00
 
 - 프로그램이 어떻게 동작하는지 프로그래밍 전에 먼저 정리해보세요.
 - 복잡한 프로그램이라도 기능 별로 함수를 만들어서 사용하면 좀 더 편해요.
+
+![done](./img/done.jpg)
 
 ### 참고자료
 - [블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
