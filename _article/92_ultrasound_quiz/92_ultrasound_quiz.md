@@ -159,11 +159,13 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
   }
 
   while (true) { // 계속 반복되는 블럭
-    blink_led(blinkInterval) // blinkInterval 동안 led를 깜빡임
+    blink_led(blinkInterval); // blinkInterval 동안 led를 깜빡임
     totalDuration = totalDuration + blinkInterval; // 깜빡인 시간을 더함
 
     if (totalDuration >= 2000){
       // 깜빡인 시간을 모두 더한 값이 2초 이상이면 반복을 중단함
+      Serial.print("\totalDuration : ");
+      Serial.println(totalDuration); // LED가 깜빡이는 시간을 보여줍니다.
       break;
     }
   }
@@ -172,6 +174,9 @@ void loop() { //loop는 계속 반복 실행되는 함수 입니다.
 // 주어진 시간 동안 led를 깜빡이는 함수입니다.
 void blink_led(int duration)
 {
+  Serial.print("\n blink_led Duration : ");
+  Serial.println(duration); // LED가 깜빡이는 시간을 보여줍니다.
+
   int half = duration / 2;
   digitalWrite(LED_PIN_NUM, HIGH);
   delay(half);
@@ -207,7 +212,7 @@ long getDistance()
   Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여줍니다.
   Serial.println(" cm");
 
-  return distance
+  return distance;
 }
 ```
 

@@ -13,7 +13,7 @@ Duration: 0:02:00
 
 ![msalt](./img/IMG_4789.JPEG)
 
-맛소금 - https://me.msalt.net
+[맛소금](https://me.msalt.net) - 지구별 대한민국의 용산에서 나고 자란 평범한 개발자 입니다. 
 
 ## 오늘 배울것
 Duration: 0:05:00
