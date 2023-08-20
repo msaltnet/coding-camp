@@ -33,8 +33,7 @@ Duration: 0:02:00
 
 Buzzer란 우리가 일상 생활에서 이미 많이 사용하고 있는 소자입니다. 버스 벨이나 초인종과 같은 기능으로 사용하기도 합니다.
 
-// 이미지 
-https://m.blog.naver.com/geniusus/221549772862
+![buzzer](./img/PIC9718.png)
 
 <aside class="positive">
 농구에서 경기 시간이 종료 Buzzer가 울릴때 던진 슛을 Buzzer Beater 버저비터라고 합니다.
@@ -42,8 +41,11 @@ https://m.blog.naver.com/geniusus/221549772862
 
 Buzzer가 우리가 원하는 소리를 내게 하기 위해서는 주파수의 개념을 이해해야 합니다. 주파수는 1초 동안 전파나 음파가 진동하는 횟수를 뜻합니다.
 
-https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EC%A0%84%EA%B8%B0%EC%83%9D%ED%99%9C%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EA%B8%B0%EC%83%81%EC%8B%9D%EC%9A%A9%EC%96%B4-%EC%A3%BC%ED%8C%8C%EC%88%98/
-// 주파수란
+[슬기로운 전기생활을 위한 전기상식용어 ‘주파수’](https://news.samsungsemiconductor.com/kr/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EC%A0%84%EA%B8%B0%EC%83%9D%ED%99%9C%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EA%B8%B0%EC%83%81%EC%8B%9D%EC%9A%A9%EC%96%B4-%EC%A3%BC%ED%8C%8C%EC%88%98/)
+
+![주파수](./img/frequency_semiconduct_20200515_01.jpeg)
+
+![주파수](./img/frequency_semiconduct_20200515_02.jpeg)
 
 소리는 주파수에 따라서 음의 높낮이가 다르며, Buzzer에 흐르는 전류를 주파수를 변경하면 소리를 변경할 수 있습니다. Buzzer에 입력되는 전류의 주파수가 높을 수록 고음이 발생합니다.
 
@@ -52,12 +54,13 @@ Duration: 0:10:00
 
 Buzzer 소자는 아두이노와 바로 연결해서 사용할 수 있습니다. Buzzer의 +극을 아두이노 핀에 연결하고 -극을 GND에 연결해줍니다.
 
-//회로도
+![회로도](./img/PIC9758.png)
+
+![실제 연결사진](./img/buzzer.jpg)
 
 음계마다 어떤 주파수를 갖는지는 표를 보고 확인 할 수 있습니다. 4옥타브를 기준으로 프로그램을 작성해 보겠습니다.
 
-// 음계 주파수 이미지
-https://m.blog.naver.com/geniusus/221549772862
+[![frequency](./img/PIC9728.png)](https://m.blog.naver.com/geniusus/221549772862)
 
 ```c
 #define NOTE_C4 261 //4옥타브 도에 해당하는 주파수
@@ -69,7 +72,7 @@ https://m.blog.naver.com/geniusus/221549772862
 #define NOTE_B4 494 //4옥타브 시에 해당하는 주파수
 #define NOTE_C5 523 //5옥타브 도에 해당하는 주파수
 
-#define BUZZER_PIN_NUM 7//아두이노와 연결된 핀 번호
+#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
 int tonesCount = 8; // tones 갯수 도레미파솔라시도 8개
 int tones[] = {
   NOTE_C4,
@@ -159,7 +162,7 @@ struct sound {
   int durationMs;
 };
 
-#define BUZZER_PIN_NUM 7//아두이노와 연결된 핀 번호
+#define BUZZER_PIN_NUM 8//아두이노와 연결된 핀 번호
 struct sound soundList[] = { //주파수와 음의 길이 정보를 갖는 구조체의 배열
   {NOTE_G4, DURTION_QUARTER},
   {NOTE_A4, DURTION_QUARTER + DURTION_EIGHTH},
