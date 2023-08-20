@@ -224,6 +224,10 @@ long getDistance()
 
 ![ultrasound-circuit](./img/ultrasound-circuit.jpg)
 
+시리얼 모니터를 통해서 화면에서 거리와 깜빡이는 시간을 확인할 수 있습니다.
+
+![ultrasound-quiz](./img/ultrasound-quiz.png)
+
 <aside class="positive">
 프로그램을 이해하고 다양한 방식으로 프로그래밍해보아요<br>
 1. LED가 깜빡이는 시간을 변경해보기<br>
