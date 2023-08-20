@@ -13,7 +13,7 @@ Duration: 0:01:00
 
 초음파 센서에 대해서 알아보고 아두이노를 통해서 초음파로 거리를 측정하는 방법을 배웠습니다.
 
-이번에는 거리에 따라 다르게 LED를 깜빡이는 회로와 프로그램을 만들어 봅시다.
+이번에는 거리에 따라 깜빡이는 간격이 다르게 LED를 깜빡이는 회로와 프로그램을 만들어 봅시다.
 
 ### 사전 준비
 1. 아두이노 보드
@@ -27,7 +27,7 @@ Duration: 0:01:00
 1. 초음파 센서와 LED와 저항의 연결 방법
 1. LED를 깜빡이는 프로그램 작성 및 실습
 
-// 완성 회로
+![ultrasound-demo](./img/ultrasound-demo.gif)
 
 ## 회로 만들기
 Duration: 0:10:00
@@ -46,6 +46,8 @@ Duration: 0:10:00
 중요한 것은 저항과 LED, 아두이노 핀은 함께 연결되어야 합니다.
 
 ![circuits](./img/ultrasound-led-blink.png)
+
+![ultrasound-circuit](./img/ultrasound-circuit2.jpg)
 
 ## 프로그래밍
 Duration: 0:10:00
@@ -122,6 +124,8 @@ Duration: 0:05:00
 아래 코드를 IDE에 복사해 넣고 업로드를 합니다.
 
 아래 코드가 어떤 내용인지는 코드에 달려있는 설명을 읽어보며 혼자 차근차근 이해해보세요~😉
+
+동작이 잘 안하면 아두이노와 연결한 핀이 프로그램과 동일하게 연결되었는지 확인해 보세요.
 
 ```c
 #define TRIG_PIN_NUM 9 //TRIG 핀과 연결된 아두이노 핀 번호 (초음파 보내는 핀)
@@ -218,7 +222,7 @@ long getDistance()
 
 초음파 센서와 손의 거리를 변경하면 LED가 깜빡이는 속도가 변경되는 것을 확인 할 수 있습니다.
 
-//사진
+![ultrasound-circuit](./img/ultrasound-circuit.jpg)
 
 <aside class="positive">
 프로그램을 이해하고 다양한 방식으로 프로그래밍해보아요<br>
