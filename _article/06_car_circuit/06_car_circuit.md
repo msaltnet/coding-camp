@@ -21,6 +21,8 @@ Duration: 0:01:00
 1. 자동차의 회로 구성
 1. 전류가 흐르는 방향을 이해하며 회로를 구성해보기
 
+![done](./img/done.jpg)
+
 ## 전원 회로 연결하기
 Duration: 0:03:00
 
@@ -96,7 +98,19 @@ Duration: 0:03:00
 
 우선 초음파 센서를 아두이노와 연결합니다.
 
-배선을 완료한 초음파센서를 아크릴 판에 부착합니다.
+![ultrasound-1](./img/ultrasound-1.jpg)
+
+초음파 센서 홀더를 아크릴에 부착합니다. 볼트와 너트를 이용해서 고정합니다.
+
+![ultrasound-2](./img/ultrasound-2.jpg)
+
+다음으로는 `VCC`를 아두이노의 `5V VCC`에, `GND`를 아두이노의 `GND`에 연결합니다. `VCC`는 블루투스센서에서 사용하고 있으므로 브레드보드를 이용해서 함께 연결합니다.
+
+![ultrasound-3](./img/ultrasound-3.jpg)
+
+마지막으로 `TRIG`를 아두이노의 `9번 핀`에, `ECHO`를 아두이노의 `8번 핀`에 연결합니다.
+
+![ultrasound-4](./img/ultrasound-4.jpg)
 
 ## 정리
 Duration: 0:03:00
@@ -110,6 +124,8 @@ Duration: 0:03:00
 - 전원을 공급하는 선을 스위치와 함께 연결해 주었습니다.
 - 모터 드라이버와 모터를 연결하고 모터드라이버에 신호를 보낼 수 있도록 아두이노와 연결해 주었습니다.
 - 초음파 센서를 설치하고 회로를 연결해 주었습니다.
+
+![done](./img/done.jpg)
 
 ### 참고자료
 - [블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)

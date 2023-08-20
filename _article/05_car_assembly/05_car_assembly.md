@@ -20,6 +20,8 @@ Duration: 0:02:00
 ### 배우게 될 것
 1. 자동차의 본체를 조립하는 방법
 
+![done](./img/done.jpg)
+
 ## 모터 조립
 Duration: 0:03:00
 
@@ -150,6 +152,8 @@ Duration: 0:01:00
 자동차 기구의 조립을 마쳤습니다. 자동차가 완성되니 빨리 움직이게 만들고 싶어지네요.
 
 다음은 회로를 구성하는 배선 작업이 필요합니다.
+
+![done](./img/done.jpg)
 
 ### 참고자료
 - [블루RC카 사용설명서](https://www.devicemart.co.kr/goods/download?id=1385495&rank=1)
