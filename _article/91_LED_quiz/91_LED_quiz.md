@@ -25,7 +25,7 @@ LED 깜빡이는 방법에 대해서 배웠습니다. 그렇다면 2개를 깜�
 ### 배우게 될 것
 1. LED를 2개 깜빡이는 프로그램 작성 및 실습
 
-// 완성 제품
+![led demo](./img/led-demo.gif)
 
 ## 회로 만들기
 Duration: 0:10:00
@@ -41,7 +41,7 @@ Duration: 0:05:00
 
 중요한 것은 저항과 LED, 아두이노 핀은 하나씩 함께 연결되어야 합니다.
 
-![circuit](./img/led-blink.png)
+![circuit](./img/2led-blink.png)
 
 ## 프로그래밍
 Duration: 0:10:00
@@ -99,3 +99,5 @@ Duration: 0:01:00
 혼자해보려니 어려운 점이 많았을 거에요. 쉽지 않은 것이니 살짝 답안을 보면서 참고해도 좋아요.
 
 **내 마음대로 다양하게 회로를 구성하고, 프로그램을 만들어 보세요!**
+
+![led circuit](./img/led-circuit.jpg)
